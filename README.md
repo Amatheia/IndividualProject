@@ -33,7 +33,7 @@ what is out/bad, and needs to be ordered/will be arriving.
   * Groovy - POJOs (simple data holding objects), in DAOs (Data Access Objects) for how 
     it handles multi-lined Strings (SQL statements), and in tests.
 
-### Design (Design.pdf)
+### [Design](Design.pdf)
 
 ### [Project Plan](ProjectPlan.md)
 
