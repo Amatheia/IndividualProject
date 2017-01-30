@@ -15,7 +15,6 @@ what is out/bad, and needs to be ordered/will be arriving.
 * Security/Authentication
   * Admin role: create/read/update/delete (crud) of all data
   * User role: submit inventory updates
-  * All: anyone can view inventory info/alerts (no login)
 * Database (MySQL and Hibernate)
   * Store users and roles
   * Store product inventory information
