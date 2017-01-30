@@ -1,4 +1,4 @@
-# April Albaugh Individual Project 
+# Individual Project 
 
 ### Problem Statement
 
