@@ -8,4 +8,7 @@
 | 1/28/17| Exercise for week 2 | 3 | |
 | 1/29/17| Project Plan, Wireframes| 2 | |
 | 2/05/17| Presentation Feedback, Exercise for week 3 | 2 | |
-| 2/06/17| Exercise for week 3, time log | 2 | | 
+| 2/06/17| Exercise for week 3, time log | 2 | |
+| 2/07/17| Individual Project | 4 | project setup, jsps, user code |
+| 2/08/17| Design Code Reviews, Presentation Feedback, Researched Spring | 3 | added dependency and xml |
+| 2/09/17| AWS setup and deployment | 4 | |
