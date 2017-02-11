@@ -35,6 +35,8 @@ what is out/bad, and needs to be ordered/will be arriving.
 
 ### [Design](Design.pdf)
 
+### [Database Design](inventorytracker_erd.pdf)
+
 ### [Project Plan](ProjectPlan.md)
 
 ### [Time Log](TimeLog.md)
