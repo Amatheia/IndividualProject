@@ -13,3 +13,4 @@
 | 2/08/17| Design Code Reviews, Presentation Feedback, Researched Spring | 3 | added dependency and xml |
 | 2/09/17| AWS setup and deployment | 4 | |
 | 2/11/17| Added Design Code Feedback, Individual Project: updated Design, created ERD, code | 7 | |
+| 2/12/17| Individual Project: updated Design, code | 2 | |

@@ -1,0 +1,8 @@
+2017-02-07 13:50:15,265 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-07 13:50:17,565 2300 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1048, SQLState: 23000
+2017-02-07 13:50:17,565 2300 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'password' cannot be null
+2017-02-07 13:50:17,567 2302 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1048, SQLState: 23000
+2017-02-07 13:50:17,568 2303 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'password' cannot be null
+2017-02-07 13:50:17,568 2303 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1048, SQLState: 23000
+2017-02-07 13:50:17,568 2303 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'username' cannot be null
+2017-02-07 13:50:17,583 2318 [main] ERROR edu.matc.persistence.UserDao  - Runtime exception to add user: org.hibernate.exception.ConstraintViolationException: could not execute statement
