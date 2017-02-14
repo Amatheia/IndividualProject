@@ -171,5 +171,4 @@ public class UserDao {
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
-
 }
