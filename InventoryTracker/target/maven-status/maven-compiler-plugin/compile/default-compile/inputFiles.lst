@@ -1,5 +1,6 @@
 /Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/edu/matc/controller/SearchUser.java
 /Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/edu/matc/entity/User.java
 /Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/edu/matc/persistence/SessionFactoryProvider.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/edu/matc/controller/LogoutServlet.java
 /Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/edu/matc/persistence/UserDao.java
 /Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/edu/matc/util/LocalDateAttributeConverter.java

@@ -14,3 +14,6 @@
 | 2/09/17| AWS setup and deployment | 4 | |
 | 2/11/17| Added Design Code Feedback, Individual Project: updated Design, created ERD, code | 7 | |
 | 2/12/17| Individual Project: updated Design, code | 2 | |
+| 2/14/17| Individual Project, readings | 2 | |
+| 2/16/17| Individual Project: database, authentication | 2 | |
+| 2/17/17| Individual Project: database, authentication, logout | 2 | |

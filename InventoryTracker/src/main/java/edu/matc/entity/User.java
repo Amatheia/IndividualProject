@@ -17,7 +17,7 @@ public class User {
     @Id
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
-    @Column(name = "id")
+    @Column(name = "user_id")
     private int userid;
 
     @Column(name = "role")
@@ -53,6 +53,7 @@ public class User {
      */
     public User(int userid, String role, String firstName, String lastName, String username, String password) {
         this.userid = userid;
+        this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;

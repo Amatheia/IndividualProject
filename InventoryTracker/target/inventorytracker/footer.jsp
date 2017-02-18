@@ -1,6 +1,8 @@
   <footer>
       <div align="center">
-        <a href="index.jsp">Logout</a><br/><br/>
+          <form action="${pageContext.request.contextPath}/logout" method="post">
+              <input type="submit" value="Logout" />
+          </form>
         <p>Copyright Amatheia 2017. All rights reserved.</p><br/>
       </div>
   </footer>

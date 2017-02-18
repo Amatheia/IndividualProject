@@ -13,8 +13,8 @@ import java.io.IOException;
 
 
 /**
- * A simple servlet to welcome the user.
- * @author pwaite
+ * A servlet to get users.
+ * @author amatheia
  */
 
 @WebServlet(
@@ -32,7 +32,7 @@ public class SearchUser extends HttpServlet {
 
         UserDao userData = new UserDao();
         req.setAttribute("users", userData.getAllUsers());
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/userlist.jsp");
         dispatcher.forward(req, resp);
 
     }

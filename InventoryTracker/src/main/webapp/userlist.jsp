@@ -29,7 +29,7 @@
         </thead>
         <tbody>
         <tr>
-            <td>${user[0].id}</td>
+            <td>${user[0].userid}</td>
             <td>${user[0].role}</td>
             <td>${user[0].firstName}</td>
             <td>${user[0].lastName}</td>
@@ -37,7 +37,7 @@
         </tr>
         <c:forEach items="${users}" var="user">
             <tr>
-                <td>${user.id}</td>
+                <td>${user.userid}</td>
                 <td>${user.role}</td>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>

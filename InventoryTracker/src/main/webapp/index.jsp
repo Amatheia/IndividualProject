@@ -2,31 +2,13 @@
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
 
-  <div align="center">
-    <div style="width:600px; margin:40px" align="left">
-        <form class="form-horizontal" id="userLogin" action="login" method="post">
-            <div class="form-group">
-                <label for="username">User:</label>
-                <input type="username" class="form-control" id="username" name="username" placeholder="Enter username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-            </div>
-            <div align="center">
-                <button type="submit" class="btn btn-default">Login</button>
-            </div>
-        </form>
-    </div>
-  </div>
-  <div align="center">
-   <p>Copyright Amatheia 2017. All rights reserved.</p><br/>
+  <div class="span6">
+    <h2 style="padding-left:30px;">User Home Page</h2>
+    <br>
+    <c:import url="navmenu.jsp" />
+    <br>
+    <p style="padding-left:20px;">List of Alerts</p>
+    <p style="padding-left:20px;">Notes</p>
   </div>
 
-<!-- javascript at the bottom for fast page loading -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-
-</body>
-</html>
-
-
+  <c:import url="footer.jsp" />
