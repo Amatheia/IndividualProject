@@ -1,0 +1,17 @@
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/SearchProduct.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/SearchUser.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/SearchCategories.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/persistence/UserDao.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/util/LocalDateAttributeConverter.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/LogoutServlet.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/Success.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/entity/Vendor.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/persistence/SessionFactoryProvider.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/SearchVendors.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/entity/Category.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/entity/Product.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/entity/User.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/controller/AddUser.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/persistence/CategoryDao.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/persistence/ProductDao.java
+/Users/amalbaugh/IdeaProjects/InventoryTracker/src/main/java/com/producttracker/persistence/VendorDao.java
