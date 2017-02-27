@@ -17,55 +17,52 @@
 - [X] Complete project plan.
 
 ### Week 3
-- [ ] Begin JSPs
-- [ ] Create project structure in IntelliJ
-- [ ] Complete database design
-- [ ] Time log entries
-- [ ] Create class diagram
+- [X] Begin JSPs
+- [X] Create project structure in IntelliJ
+- [X] Complete database design
+- [X] Time log entries
+- [X] Create class diagram
 
 ### Week 4
-- [ ] Set up logging
-- [ ] Complete remaining JSPs
-- [ ] Add in bootstrap
-- [ ] Create database and all tables/columns locally
-- [ ] Time log entries
-- [ ] Add Maven for building
-- [ ] Add entities for remaining tables
+- [X] Set up logging
+- [X] Complete remaining JSPs
+- [X] Add in bootstrap
+- [X] Create database and all tables/columns locally
+- [X] Time log entries
+- [X] Add Maven for building
+- [X] Add entities for remaining tables
 
 ### Week 5
-- [ ] Add Hibernate config
-- [ ] Add Spring
-- [ ] Time log entries
+- [X] Add Hibernate config
+- [X] Time log entries
 
 ### Week 6
-- [ ] Time log entries
-- [ ] Set up unit testing
-- [ ] Add user login  
+- [X] Time log entries
+- [X] Set up unit testing
+- [X] Add user login  
 - [ ] Add user registration
-- [ ] Add Groovy for POJOs (simple data holding objects) for brevity, in DAOs 
-      (Data Access Objects) for how it handles multi-lined Strings (SQL statements), 
-      and in tests
-- [ ] Create DAO for user crud
-- [ ] Add unit tests for DAO 
+- [X] Create DAO for user crud
+- [X] Add unit tests for DAO (add more testing later)
 
 ### Week 7
 - [ ] Time log entries
-- [ ] Integration with Team Project web service
-- [ ] Add AngularJS
 - [ ] Add tests for new functionality
 
 ### Week 8
 - [ ] Time log entries
 - [ ] Code review
+- [ ] Add Spring
 
 ### Week 9
 - [ ] Time log entries
 - [ ] Code cleanup
 - [ ] Create database on openshift
 - [ ] Set up authentication and db access in app on openshift
+- [ ] Integration with Team Project web service
 
 ### Week 10
 - [ ] Time log entries
+- [ ] Add AngularJS
 
 ### Week 11
 - [ ] Time log entries

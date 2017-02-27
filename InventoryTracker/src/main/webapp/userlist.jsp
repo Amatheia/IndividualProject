@@ -2,6 +2,9 @@
 <c:set var="title" value="Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
+<%@page import="java.util.List"%>
+<%@page import="com.producttracker.entity.User"%>
+<%@page import="com.producttracker.persistence.UserDao"%>
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
@@ -25,25 +28,24 @@
             <td>First Name</td>
             <td>Last Name</td>
             <td>Username</td>
+            <td>Date Added</td>
         </tr>
         </thead>
         <tbody>
+        <%
+            UserDao userlist = new UserDao();
+            List<User> list = userlist.getAllUsers();
+            for (User u : list) {
+        %>
         <tr>
-            <td>${user[0].userid}</td>
-            <td>${user[0].role}</td>
-            <td>${user[0].firstName}</td>
-            <td>${user[0].lastName}</td>
-            <td>${user[0].username}</td>
+            <td><%=u.getUserid()%></td>
+            <td><%=u.getRole()%></td>
+            <td><%=u.getFirstName()%></td>
+            <td><%=u.getLastName()%></td>
+            <td><%=u.getUsername()%></td>
+            <td><%=u.getDateAdded()%></td>
         </tr>
-        <c:forEach items="${users}" var="user">
-            <tr>
-                <td>${user.userid}</td>
-                <td>${user.role}</td>
-                <td>${user.firstName}</td>
-                <td>${user.lastName}</td>
-                <td>${user.username}</td>
-            </tr>
-        </c:forEach>
+        <%}%>
         </tbody>
     </table>
 </div>

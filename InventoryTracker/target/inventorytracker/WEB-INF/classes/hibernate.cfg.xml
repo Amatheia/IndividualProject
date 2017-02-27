@@ -21,7 +21,10 @@
         <property name="show_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="edu.matc.entity.User"/>
+        <mapping class="com.producttracker.entity.User"/>
+        <mapping class="com.producttracker.entity.Product"/>
+        <mapping class="com.producttracker.entity.Category"/>
+        <mapping class="com.producttracker.entity.Vendor"/>
 
     </session-factory>
 

@@ -17,3 +17,7 @@
 | 2/14/17| Individual Project, readings | 2 | |
 | 2/16/17| Individual Project: database, authentication | 2 | |
 | 2/17/17| Individual Project: database, authentication, logout | 2 | |
+| 2/20/17| Presentation | 3 | |
+| 2/21/17| Week 6 SOAP videos | 2 | |
+| 2/24/17| Individual Project | 2 | |
+| 2/25/17| Individual Project | 4 | |

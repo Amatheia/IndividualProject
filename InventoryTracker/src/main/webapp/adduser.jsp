@@ -43,24 +43,18 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="confirmPassword" class="col-xs-4 control-label">Confirm Password:</label>
-                    <div class="col-xs-8">
-                        <input type="text" class="form-control" id="confirmPassword" name="confirmPassword">
-                    </div>
-                </div>
-                <div class="form-group row">
                     <div class="col-sm-10">
                         <div class="form-check" id="userOptions">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" id="viewInventory" name="users"
+                                <input class="form-check-input" type="checkbox" id="viewInventory" name="viewInventory"
                                        value="View Inventory"> View Inventory <br/>
-                                <input class="form-check-input" type="checkbox" id="addProduct" name="users"
+                                <input class="form-check-input" type="checkbox" id="addProduct" name="addProduct"
                                        value="Add Product"> Add Product <br/>
-                                <input class="form-check-input" type="checkbox" id="updateProduct" name="users"
+                                <input class="form-check-input" type="checkbox" id="updateProduct" name="updateProduct"
                                        value="Update Product"> Update Product <br/>
-                                <input class="form-check-input" type="checkbox" id="deleteProduct" name="users"
+                                <input class="form-check-input" type="checkbox" id="deleteProduct" name="deleteProduct"
                                        value="Delete Product"> Delete Product <br/>
-                                <input class="form-check-input" type="checkbox" id="addNewUser" name="users"
+                                <input class="form-check-input" type="checkbox" id="addNewUser" name="addNewUser"
                                        value="Add New User"> Add New User
                             </label>
                         </div>

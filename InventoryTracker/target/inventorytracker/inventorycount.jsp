@@ -1,6 +1,16 @@
 <%@include file="taglib.jsp"%>
+<c:set var="title" value="Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
+<%@page import="java.util.List"%>
+<%@page import="com.producttracker.entity.Category"%>
+<%@page import="com.producttracker.persistence.CategoryDao"%>
+
+<script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('#categoryTable').DataTable();
+    } );
+</script>
 
 <div class="span6">
     <h2 style="padding-left:30px;">Inventory Count</h2>

@@ -5,7 +5,7 @@
 2017-02-07 13:50:17,568 2303 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'password' cannot be null
 2017-02-07 13:50:17,568 2303 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1048, SQLState: 23000
 2017-02-07 13:50:17,568 2303 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'username' cannot be null
-2017-02-07 13:50:17,583 2318 [main] ERROR edu.matc.persistence.UserDao  - Runtime exception to add user: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2017-02-07 13:50:17,583 2318 [main] ERROR UserDao  - Runtime exception to add user: org.hibernate.exception.ConstraintViolationException: could not execute statement
 2017-02-14 15:26:44,483 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-14 20:19:47,570 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-14 20:20:09,281 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
@@ -25,59 +25,126 @@
 2017-02-16 21:17:42,937 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 21:17:45,883 2946 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:17:45,884 2947 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.id' in 'field list'
-2017-02-16 21:17:45,885 2948 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:17:45,885 2948 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:17:46,014 3077 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:17:46,015 3078 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
-2017-02-16 21:17:46,015 3078 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:17:46,015 3078 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:17:46,021 3084 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1054, SQLState: 42S22
 2017-02-16 21:17:46,021 3084 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
 2017-02-16 21:18:12,050 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 21:18:12,901 851  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:18:12,901 851  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.id' in 'field list'
-2017-02-16 21:18:12,903 853  [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:18:12,903 853  [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:18:12,953 903  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:18:12,953 903  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
-2017-02-16 21:18:12,954 904  [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:18:12,954 904  [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:18:12,954 904  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1054, SQLState: 42S22
 2017-02-16 21:18:12,954 904  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
 2017-02-16 21:19:19,759 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 21:19:20,517 758  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:19:20,517 758  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.id' in 'field list'
-2017-02-16 21:19:20,518 759  [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:19:20,518 759  [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:19:20,563 804  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:19:20,563 804  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
-2017-02-16 21:19:20,563 804  [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:19:20,563 804  [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:19:20,564 805  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1054, SQLState: 42S22
 2017-02-16 21:19:20,564 805  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
 2017-02-16 21:20:16,423 1    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 21:20:18,944 2522 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:20:18,944 2522 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.id' in 'field list'
-2017-02-16 21:20:18,945 2523 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:20:18,945 2523 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:20:19,074 2652 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:20:19,075 2653 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
-2017-02-16 21:20:19,075 2653 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:20:19,075 2653 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:20:19,076 2654 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1054, SQLState: 42S22
 2017-02-16 21:20:19,076 2654 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.id' in 'field list'
 2017-02-16 21:23:49,167 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 21:23:50,205 1038 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:23:50,205 1038 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.id' in 'field list'
-2017-02-16 21:23:50,206 1039 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:23:50,206 1039 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 21:25:41,713 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 21:25:42,830 1117 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-16 21:25:42,830 1117 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.id' in 'field list'
-2017-02-16 21:25:42,831 1118 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-16 21:25:42,831 1118 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-16 22:19:58,366 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-16 22:20:27,079 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-17 19:45:36,741 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-17 19:45:43,645 6904 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-17 19:45:43,645 6904 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.role' in 'field list'
-2017-02-17 19:45:43,657 6916 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-17 19:45:43,657 6916 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-17 19:45:43,964 7223 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-17 19:45:43,965 7224 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.role' in 'field list'
-2017-02-17 19:45:43,965 7224 [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-17 19:45:43,965 7224 [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
 2017-02-17 19:45:43,966 7225 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1054, SQLState: 42S22
 2017-02-17 19:45:43,966 7225 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'user0_.role' in 'field list'
 2017-02-17 19:49:48,348 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2017-02-17 19:49:49,071 723  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
 2017-02-17 19:49:49,071 723  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.role' in 'field list'
-2017-02-17 19:49:49,072 724  [main] ERROR edu.matc.persistence.UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-17 19:49:49,072 724  [main] ERROR UserDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-25 16:26:59,722 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 16:29:25,583 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 16:29:26,562 979  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1054, SQLState: 42S22
+2017-02-25 16:29:26,562 979  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'this_.categoryName' in 'field list'
+2017-02-25 16:29:26,563 980  [main] ERROR com.producttracker.persistence.ProductDao  - Exception: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2017-02-25 16:42:47,084 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 16:42:47,992 908  [main] ERROR com.producttracker.persistence.ProductDao  - Exception: org.hibernate.PropertyAccessException: Null value was assigned to a property of primitive type setter of com.producttracker.entity.Product.currentQuantity
+2017-02-25 16:52:05,462 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 16:52:12,542 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 16:52:28,896 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 17:00:16,040 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 17:35:13,197 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 17:35:13,747 550  [main] ERROR com.producttracker.persistence.CategoryDao  - Exception: org.hibernate.AnnotationException: No identifier specified for entity: com.producttracker.entity.Category
+2017-02-25 17:49:49,142 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 17:50:41,885 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 17:53:43,322 1    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:33:56,455 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:40:25,024 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:40:47,490 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:41:19,808 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:41:27,591 1    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:47:12,249 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:50:21,166 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 18:52:40,503 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 19:42:07,418 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 21:40:59,080 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 21:41:00,209 1129 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1048, SQLState: 23000
+2017-02-25 21:41:00,209 1129 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'date_added' cannot be null
+2017-02-25 21:41:00,211 1131 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1048, SQLState: 23000
+2017-02-25 21:41:00,211 1131 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Column 'date_added' cannot be null
+2017-02-25 21:41:00,212 1132 [main] ERROR com.producttracker.persistence.UserDao  - Exception: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2017-02-25 22:48:49,261 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 22:49:37,572 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 22:50:42,259 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 22:50:43,147 888  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-02-25 22:50:43,148 889  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-25 22:50:43,151 892  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-02-25 22:50:43,151 892  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-25 22:50:43,152 893  [main] ERROR com.producttracker.persistence.UserDao  - Exception: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2017-02-25 22:55:03,974 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 22:55:04,794 820  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-02-25 22:55:04,794 820  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-25 22:55:04,796 822  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-02-25 22:55:04,796 822  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-25 22:55:04,796 822  [main] ERROR com.producttracker.persistence.UserDao  - Exception: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2017-02-25 23:01:47,710 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 23:01:48,524 814  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-02-25 23:01:48,524 814  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-25 23:01:48,526 816  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-02-25 23:01:48,526 816  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-25 23:01:48,526 816  [main] ERROR com.producttracker.persistence.UserDao  - Exception: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2017-02-25 23:32:21,381 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 23:48:15,311 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 23:49:50,099 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-25 23:57:07,653 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-26 00:05:36,867 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-26 00:05:37,675 808  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-02-26 00:05:37,675 808  [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-26 00:05:37,676 809  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-02-26 00:05:37,677 810  [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-26 00:05:37,677 810  [main] ERROR com.producttracker.persistence.UserDao  - Exception: org.hibernate.exception.ConstraintViolationException: could not execute statement
+2017-02-26 09:22:18,085 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-02-26 09:22:21,462 3377 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-02-26 09:22:21,462 3377 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-26 09:22:21,464 3379 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-02-26 09:22:21,465 3380 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'admin-mockingjay' for key 'constr_roles'
+2017-02-26 09:22:21,465 3380 [main] ERROR com.producttracker.persistence.UserDao  - Exception: org.hibernate.exception.ConstraintViolationException: could not execute statement

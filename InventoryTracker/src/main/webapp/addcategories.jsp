@@ -1,6 +1,16 @@
 <%@include file="taglib.jsp"%>
+<c:set var="title" value="Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
+<%@page import="java.util.List"%>
+<%@page import="com.producttracker.entity.Category"%>
+<%@page import="com.producttracker.persistence.CategoryDao"%>
+
+<script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('#categoryTable').DataTable();
+    } );
+</script>
 
 <div class="span6">
     <h2 style="padding-left:30px;">Add Categories</h2>
@@ -27,6 +37,30 @@
     </div>
 </div>
 <br>
-<p>Output List of Categories</p>
+<br>
+<div class="container-fluid">
+    <h2>Categories: </h2>
+    <table id="categoryTable" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <td>Category Name</td>
+            <td>Description</td>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            CategoryDao categorylist = new CategoryDao();
+            List<Category> list = categorylist.getAllCategories();
+            for (Category c : list) {
+        %>
+        <tr>
+            <td><%=c.getCategoryName()%></td>
+            <td><%=c.getDescription()%></td>
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+</div>
+<br>
 <br>
 <c:import url="footer.jsp" />
