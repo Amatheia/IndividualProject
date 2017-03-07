@@ -91,7 +91,7 @@ public class ProductDao {
      * @param product
      * @return the id of the inserted record
      */
-    public int add(Product product) {
+    public int addProduct(Product product) {
         int id = 0;
         Session session = null;
         try {

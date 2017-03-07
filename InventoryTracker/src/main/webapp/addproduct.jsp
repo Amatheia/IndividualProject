@@ -14,20 +14,20 @@
     <div style="width:600px;" align="left">
     <form role="form" class="form-horizontal" id="addProduct" action="addProduct" method="post">
         <div class="form-group row">
-            <label for="productId" class="col-xs-4 control-label">Product Id:</label>
+            <label for="categoryName" class="col-xs-4 control-label">Category:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="productId" name="productId">
+                <select class="form-control" id="categoryName" name="categoryName">
+                    <%-- need to pull options from database --%>
+                    <option>Coffee</option>
+                </select>
             </div>
         </div>
         <div class="form-group row">
-            <label for="category" class="col-xs-4 control-label">Product Category:</label>
+            <label for="vendorName" class="col-xs-4 control-label">Vendor:</label>
             <div class="col-xs-8">
-                <select class="form-control" id="category" name="category">
+                <select class="form-control" id="vendorName" name="vendorName">
                     <%-- need to pull options from database --%>
-                    <option>Coffee</option>
-                    <option>Tea</option>
-                    <option>Fruit</option>
-                    <option>Vegetables</option>
+                    <option>Royal Coffee</option>
                 </select>
             </div>
         </div>
@@ -35,12 +35,6 @@
             <label for="productName" class="col-xs-4 control-label">Product Name:</label>
             <div class="col-xs-8">
                 <input type="text" class="form-control" id="productName" name="productName">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="vendor" class="col-xs-4 control-label">Vendor:</label>
-            <div class="col-xs-8">
-                <input type="text" class="form-control" id="vendor" name="vendor">
             </div>
         </div>
         <div class="form-group row">

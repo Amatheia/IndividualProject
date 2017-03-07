@@ -21,3 +21,8 @@
 | 2/21/17| Week 6 SOAP videos | 2 | |
 | 2/24/17| Individual Project | 2 | |
 | 2/25/17| Individual Project | 4 | |
+| 2/27/17| Individual Project | 2 | |
+| 2/28/17| Individual Project, AWS | 3 | |
+| 03/03/17| Week 7 activities, Added Team Project Repo | 2 | |
+| 03/05/17| Individual Project | 3 | |
+| 03/06/17| Week 7 activities and exercise | 3 | |

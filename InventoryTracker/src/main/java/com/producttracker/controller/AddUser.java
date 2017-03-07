@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.GregorianCalendar;
 import javax.servlet.http.HttpSession;
 
 
@@ -29,7 +31,27 @@ public class AddUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        PrintWriter out = response.getWriter();
 
+        response.setContentType("text/plain");
+
+        String role = request.getParameter("role");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        User user = new User();
+        user.setRole(role);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setDateAdded(new java.sql.Date(new GregorianCalendar(2017, 03, 25).getTime().getTime()));
+
+        UserDao dao = new UserDao();
+
+        dao.addUser(user);
 
     }
 

@@ -13,7 +13,9 @@ import java.io.IOException;
  * A servlet to logout users.
  * @author amatheia
  */
+
 @WebServlet("/logout")
+
 public class LogoutServlet extends HttpServlet {
 
     @Override
@@ -25,7 +27,7 @@ public class LogoutServlet extends HttpServlet {
 
         }
 
-        response.sendRedirect("/index.jsp");
+        response.sendRedirect("/inventorytracker/login.jsp");
     }
 
 }

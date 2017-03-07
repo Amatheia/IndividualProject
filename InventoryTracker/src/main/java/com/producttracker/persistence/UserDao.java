@@ -98,6 +98,7 @@ public class UserDao {
             session = openSession();
             Transaction transaction = session.beginTransaction();
             id = (int) session.save(user);
+            log.info("Inserting record" + user);
             transaction.commit();
         } catch (HibernateException he) {
             log.error("Exception: " + he);

@@ -36,6 +36,59 @@ public class CategoryDao {
         return categories;
     }
 
+    /**
+     * retrieve a category given their id
+     *
+     * @param id the category's id
+     * @return category
+     */
+    public Category getCategory(int id) {
+        Category category = null;
+        Session session = null;
+        try {
+            session = openSession();
+            category = (Category) session.get(Category.class, id);
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return category;
+    }
+
+
+    /**
+     * add a category
+     *
+     * @param category
+     * @return the id of the inserted record
+     */
+    public int addCategory(Category category) {
+        int id = 0;
+        Session session = null;
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+            id = (int) session.save(category);
+            log.info("Inserting record" + category);
+            transaction.commit();
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+        return id;
+    }
+
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }

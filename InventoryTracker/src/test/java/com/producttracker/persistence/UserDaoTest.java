@@ -29,7 +29,6 @@ public class UserDaoTest {
         assertTrue(users.size() > 0);
     }
 
-
     @Test
     public void addUser(){
         User addUser = new User();

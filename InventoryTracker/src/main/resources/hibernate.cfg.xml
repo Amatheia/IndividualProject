@@ -13,6 +13,7 @@
         <property name="connection.url">jdbc:mysql://localhost:3306/inventorytracker</property>
         <property name="connection.username">root</property>
         <property name="connection.password">k?sGUP#3rw8</property>
+        <!--<property name="connection.password">uBu54XoxU9U5Ew</property>-->
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>

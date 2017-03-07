@@ -36,6 +36,58 @@ public class VendorDao {
         return vendors;
     }
 
+    /**
+     * retrieve a vendor given their id
+     *
+     * @param id the vendor's id
+     * @return vendor
+     */
+    public Vendor getVendor(int id) {
+        Vendor vendor = null;
+        Session session = null;
+        try {
+            session = openSession();
+            vendor = (Vendor) session.get(Vendor.class, id);
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return vendor;
+    }
+
+    /**
+     * add a vendor
+     *
+     * @param vendor
+     * @return the id of the inserted record
+     */
+    public int addVendor(Vendor vendor) {
+        int id = 0;
+        Session session = null;
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+            id = (int) session.save(vendor);
+            log.info("Inserting record" + vendor);
+            transaction.commit();
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+        return id;
+    }
+
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }

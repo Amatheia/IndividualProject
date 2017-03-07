@@ -13,7 +13,7 @@
 </script>
 
 <div class="span6">
-    <h2 style="padding-left:30px;">Add Categories</h2>
+    <h2 style="padding-left:30px;">Add Category</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
@@ -24,9 +24,15 @@
         <div style="width:600px;" align="left">
             <form role="form" class="form-horizontal" id="addCategories" action="addCategories" method="post">
                 <div class="form-group row">
-                    <label for="addCategory" class="col-xs-4 control-label">Add Category:</label>
+                    <label for="categoryName" class="col-xs-4 control-label">Category Name:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="addCategory" name="addCategory">
+                        <input type="text" class="form-control" id="categoryName" name="categoryName">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" class="col-xs-4 control-label">Description:</label>
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" id="description" name="description">
                     </div>
                 </div>
                 <div align="center">
@@ -43,6 +49,7 @@
     <table id="categoryTable" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>
+            <td>Category Id</td>
             <td>Category Name</td>
             <td>Description</td>
         </tr>
@@ -54,6 +61,7 @@
             for (Category c : list) {
         %>
         <tr>
+            <td><%=c.getCategoryId()%></td>
             <td><%=c.getCategoryName()%></td>
             <td><%=c.getDescription()%></td>
         </tr>

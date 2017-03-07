@@ -15,8 +15,11 @@ import javax.persistence.*;
 public class Vendor {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    @Column(name="vendor_id")
+    private int vendorId;
+
     @Column(name = "vendor_name", unique = true)
     private String vendorName;
 
@@ -47,6 +50,7 @@ public class Vendor {
     /**
      * Instantiates a new Product.
      *
+     * @param vendorId  the vendor id
      * @param vendorName   the vendor name
      * @param contactName    the contact name
      * @param address    the address
@@ -55,9 +59,10 @@ public class Vendor {
      * @param postalCode    the postal code
      * @param phone    the phone number
      */
-    public Vendor(String vendorName, String contactName, String address,
+    public Vendor(int vendorId, String vendorName, String contactName, String address,
                     String city, String stateProvince, String postalCode,
                     String phone) {
+        this.vendorId = vendorId;
         this.vendorName = vendorName;
         this.contactName = contactName;
         this.address = address;
@@ -65,6 +70,24 @@ public class Vendor {
         this.stateProvince = stateProvince;
         this.postalCode = postalCode;
         this.phone = phone;
+    }
+
+    /**
+     * Gets vendorId.
+     *
+     * @return the vendorId
+     */
+    public int getVendorId() {
+        return vendorId;
+    }
+
+    /**
+     * Sets vendorId.
+     *
+     * @param vendorId the vendorId
+     */
+    public void setVendorId(int vendorId) {
+        this.vendorId = vendorId;
     }
 
     /**

@@ -26,4 +26,16 @@ public class CategoryDaoTest {
         assertTrue(categories.size() > 0);
     }
 
+    @Test
+    public void addCategory(){
+        Category cat = new Category();
+
+        cat.setCategoryId(1);
+        cat.setCategoryName("Coffee");
+        cat.setDescription("green coffee beans");
+        dao.addCategory(cat);
+
+        assertEquals("Category name incorrect", "Coffee", dao.getCategory(1).getCategoryName());
+    }
+
 }

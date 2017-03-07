@@ -26,4 +26,21 @@ public class VendorDaoTest {
         assertTrue(vendors.size() > 0);
     }
 
+    @Test
+    public void addVendor(){
+        Vendor v = new Vendor();
+
+        v.setVendorId(1);
+        v.setVendorName("Royal Coffee");
+        v.setContactName("Jim Johnson");
+        v.setAddress("325 Spaight St");
+        v.setCity("Madison");
+        v.setStateProvince("WI");
+        v.setPostalCode("53719");
+        v.setPhone("608-275-8967");
+        dao.addVendor(v);
+
+        assertEquals("Vendor name incorrect", "Royal Coffee", dao.getVendor(1).getVendorName());
+    }
+
 }
