@@ -42,26 +42,11 @@
                         <input type="text" class="form-control" id="password" name="password">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <div class="form-check" id="userOptions">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" id="viewInventory" name="viewInventory"
-                                       value="View Inventory"> View Inventory <br/>
-                                <input class="form-check-input" type="checkbox" id="addProduct" name="addProduct"
-                                       value="Add Product"> Add Product <br/>
-                                <input class="form-check-input" type="checkbox" id="updateProduct" name="updateProduct"
-                                       value="Update Product"> Update Product <br/>
-                                <input class="form-check-input" type="checkbox" id="deleteProduct" name="deleteProduct"
-                                       value="Delete Product"> Delete Product <br/>
-                                <input class="form-check-input" type="checkbox" id="addNewUser" name="addNewUser"
-                                       value="Add New User"> Add New User
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                <br/>
                 <div align="center">
-                    <button type="submit" class="btn btn-primary">Add User</button>
+                    <form action="${pageContext.request.contextPath}/success" method="post">
+                        <input type="submit" class="btn btn-primary" value="Add User" />
+                    </form>
                 </div>
             </form>
         </div>

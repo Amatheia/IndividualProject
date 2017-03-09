@@ -40,32 +40,35 @@
 - [X] Time log entries
 - [X] Set up unit testing
 - [X] Add user login  
-- [ ] Add user registration
 - [X] Create DAO for user crud
 - [X] Add unit tests for DAO (add more testing later)
 
 ### Week 7
-- [ ] Time log entries
-- [ ] Add tests for new functionality
+- [X] Time log entries
+- [X] Create DAOs for other entities
+- [X] Add tests for new functionality
 
 ### Week 8
 - [ ] Time log entries
-- [ ] Code review
-- [ ] Add Spring
+- [X] Code reviews
+- [ ] Finish CRUD for all entities
+- [ ] Add user registration
+- [ ] Simplify design as needed
 
 ### Week 9
 - [ ] Time log entries
-- [ ] Code cleanup
-- [ ] Create database on openshift
-- [ ] Set up authentication and db access in app on openshift
-- [ ] Integration with Team Project web service
+- [ ] Business Logic
+- [ ] Add Spring
 
 ### Week 10
 - [ ] Time log entries
-- [ ] Add AngularJS
+- [ ] Spring integration
 
 ### Week 11
 - [ ] Time log entries
+- [ ] Integration with Team Project web service
+- [ ] AngularJS
+- [ ] Fix design, code, etc.
 
 ### Week 12
 - [ ] Time log entries

@@ -1,7 +1,8 @@
 package com.producttracker.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
-
+import java.util.Date;
 import javax.persistence.*;
 
 /**
@@ -35,23 +36,10 @@ public class User {
     @Column(name="password")
     private String password;
 
-    @Column(name="view_inventory")
-    private byte viewInventory;
-
-    @Column(name="add_product")
-    private byte addProduct;
-
-    @Column(name="update_product")
-    private byte updateProduct;
-
-    @Column(name="delete_product")
-    private byte deleteProduct;
-
-    @Column(name="add_user")
-    private byte addUser;
-
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="date_added")
-    private java.sql.Date dateAdded;
+    private Date dateAdded;
 
     /**
      * Instantiates a new User.
@@ -68,27 +56,16 @@ public class User {
      * @param lastName    the last name
      * @param username    the username
      * @param password    the password
-     * @param viewInventory    the viewInventory
-     * @param addProduct    the addProduct
-     * @param updateProduct    the updateProduct
-     * @param deleteProduct    the deleteProduct
-     * @param addUser    the addUser
      * @param dateAdded    the dateAdded
      */
     public User(int userid, String role, String firstName, String lastName,
-                String username, String password, byte viewInventory, byte addProduct,
-                byte updateProduct, byte deleteProduct, byte addUser, java.sql.Date dateAdded) {
+                String username, String password, Date dateAdded) {
         this.userid = userid;
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
-        this.viewInventory = viewInventory;
-        this.addProduct = addProduct;
-        this.updateProduct = updateProduct;
-        this.deleteProduct = deleteProduct;
-        this.addUser = addUser;
         this.dateAdded = dateAdded;
     }
 
@@ -201,111 +178,12 @@ public class User {
     }
 
     /**
-     * Gets viewInventory.
-     *
-     * @return the viewInventory
-     */
-    public byte getViewInventory() {
-        return viewInventory;
-    }
-
-    /**
-     * Sets viewInventory.
-     *
-     * @param viewInventory the viewInventory
-     */
-    public void setViewInventory(byte viewInventory) {
-        this.viewInventory = viewInventory;
-    }
-
-    /**
-     * Gets addProduct.
-     *
-     * @return the addProduct
-     */
-    public byte getAddProduct() {
-        return addProduct;
-    }
-
-    /**
-     * Sets addProduct.
-     *
-     * @param addProduct the addProduct
-     */
-    public void setAddProduct(byte addProduct) {
-        this.addProduct = addProduct;
-    }
-
-    /**
-     * Gets updateProduct.
-     *
-     * @return the updateProduct
-     */
-    public byte getUpdateProduct() {
-        return updateProduct;
-    }
-
-    /**
-     * Sets updateProduct.
-     *
-     * @param updateProduct the updateProduct
-     */
-    public void setUpdateProduct(byte updateProduct) {
-        this.updateProduct = updateProduct;
-    }
-
-    /**
-     * Gets deleteProduct.
-     *
-     * @return the deleteProduct
-     */
-    public byte getDeleteProduct() {
-        return deleteProduct;
-    }
-
-    /**
-     * Sets deleteProduct.
-     *
-     * @param deleteProduct the deleteProduct
-     */
-    public void setDeleteProduct(byte deleteProduct) {
-        this.deleteProduct = deleteProduct;
-    }
-
-    /**
-     * Gets addUser.
-     *
-     * @return the addUser
-     */
-    public byte getAddUser() {
-        return addUser;
-    }
-
-    /**
-     * Sets addUser.
-     *
-     * @param addUser the addUser
-     */
-    public void setAddUser(byte addUser) {
-        this.addUser = addUser;
-    }
-
-    /**
      * Gets dateAdded.
      *
      * @return the dateAdded
      */
-    public java.sql.Date getDateAdded() {
+    public Date getDateAdded() {
         return dateAdded;
-    }
-
-    /**
-     * Sets dateAdded.
-     *
-     * @param dateAdded the dateAdded
-     */
-    public void setDateAdded(java.sql.Date dateAdded) {
-        this.dateAdded = dateAdded;
     }
 
 }

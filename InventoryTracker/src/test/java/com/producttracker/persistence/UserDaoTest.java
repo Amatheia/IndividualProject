@@ -4,7 +4,7 @@ import com.producttracker.entity.User;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 import java.util.GregorianCalendar;
 
@@ -33,16 +33,16 @@ public class UserDaoTest {
     public void addUser(){
         User addUser = new User();
 
-        addUser.setUserid(2);
+        addUser.setUserid(4);
         addUser.setRole("admin");
-        addUser.setFirstName("Jennifer");
-        addUser.setLastName("Lawrence");
-        addUser.setUsername("mockingjay");
-        addUser.setPassword("hungergames");
-        addUser.setDateAdded(new java.sql.Date(new GregorianCalendar(2017, 02, 25).getTime().getTime()));
+        addUser.setFirstName("Mary J.");
+        addUser.setLastName("Blige");
+        addUser.setUsername("hiphopsoulqueen");
+        addUser.setPassword("icandobad");
+        addUser.getDateAdded();
         dao.addUser(addUser);
 
-        assertEquals("Last name incorrect", "Lawrence", dao.getUser(2).getLastName());
+        assertEquals("Last name incorrect", "Blige", dao.getUser(4).getLastName());
     }
 
 }

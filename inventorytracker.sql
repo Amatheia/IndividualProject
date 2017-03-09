@@ -6,12 +6,7 @@ create table users (
     `first_name` varchar(25),
     `last_name` varchar(30),
     `username` varchar(25) NOT NULL,
-    `password` varchar(40) NOT NULL,
-    `view_inventory` TINYINT(1) DEFAULT 0,
-    `add_product` TINYINT(1) DEFAULT 0,
-    `update_product` TINYINT(1) DEFAULT 0,
-    `delete_product` TINYINT(1) DEFAULT 0,
-    `add_user` TINYINT(1) DEFAULT 0,	
+    `password` varchar(40) NOT NULL,	
     `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY  (user_id)    
 );
@@ -70,4 +65,10 @@ create table products (
   PRIMARY KEY  (product_id)
 );
 
+INSERT INTO categories (category_name, description) VALUES ("Green Tea", "green teas");
+INSERT INTO vendors (vendor_name, contact_name, address, city, state_province, postal_code, phone)
+	VALUES ("Royal Coffee", "Jim Johnson", "325 Spaight St", "Madison", "WI", "53719", "608-535-2756");
+	
+INSERT INTO products (add_date, category_name, vendor_name, product_name, quantity_ordered, weight, per_unit_cost)
+	VALUES (NOW(), "Coffee", "Royal Coffee", "Indonesian Bali Blue Moon", "5", "60", "3.50");	
 

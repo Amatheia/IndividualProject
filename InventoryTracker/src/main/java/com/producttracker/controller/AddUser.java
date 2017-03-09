@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.GregorianCalendar;
+import java.util.Date;
 import javax.servlet.http.HttpSession;
 
 
@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
 )
 public class AddUser extends HttpServlet {
 
-    private final Logger logger = Logger.getLogger(this.getClass());
+    private final Logger log = Logger.getLogger(this.getClass());
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,11 +47,13 @@ public class AddUser extends HttpServlet {
         user.setLastName(lastName);
         user.setUsername(username);
         user.setPassword(password);
-        user.setDateAdded(new java.sql.Date(new GregorianCalendar(2017, 03, 25).getTime().getTime()));
+        user.getDateAdded();
 
         UserDao dao = new UserDao();
 
         dao.addUser(user);
+
+        log.info("Added user: " + firstName);
 
     }
 
