@@ -11,42 +11,47 @@
 <div align="center">
     <div class="container">
         <div style="width:600px;" align="left">
-            <form role="form" class="form-horizontal" id="addUser" action="addUser" method="post">
+            <form role="form" class="form-horizontal" id="UserController" action="UserController" method="post">
+                <div class="form-group row">
+                    <label for="id" class="col-xs-4 control-label">User Id:</label>
+                    <div class="col-xs-8">
+                        <input type="text" id="id" readonly="readonly" name="userid"
+                               value="<c:out value="${user.userid}" />" />
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label for="role" class="col-xs-4 control-label">Role or Title:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="role" name="role">
+                        <input type="text" class="form-control" id="role" name="role" value="<c:out value="${user.role}" />" />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="firstName" class="col-xs-4 control-label">First Name:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="firstName" name="firstName">
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<c:out value="${user.firstName}" />" />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="lastName" class="col-xs-4 control-label">Last Name:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="lastName" name="lastName">
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<c:out value="${user.lastName}" />" />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="username" class="col-xs-4 control-label">Username:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="username" name="username">
+                        <input type="text" class="form-control" id="username" name="username" value="<c:out value="${user.username}" />" />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="password" class="col-xs-4 control-label">Password:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="password" name="password">
+                        <input type="text" class="form-control" id="password" name="password" value="<c:out value="${user.password}" />" />
                     </div>
                 </div>
                 <br/>
                 <div align="center">
-                    <form action="${pageContext.request.contextPath}/success" method="post">
-                        <input type="submit" class="btn btn-primary" value="Add User" />
-                    </form>
+                        <input type="submit" class="btn btn-primary" value="Submit" />
                 </div>
             </form>
         </div>

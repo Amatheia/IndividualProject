@@ -27,3 +27,6 @@
 | 03/05/17| Individual Project | 3 | |
 | 03/06/17| Week 7 activities and exercise | 3 | |
 | 03/08/17| Presentation feedback, Code Reviews | 2.5 | |
+| 03/10/17| Individual Project | 2 | |
+| 03/17/17| Individual Project | 2 | |
+| 03/18/17| Individual Project | 4 | |

@@ -23,12 +23,13 @@
     <table id="userTable" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>
-            <td>ID</td>
-            <td>Role</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Username</td>
-            <td>Date Added</td>
+            <th>ID</th>
+            <th>Role</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Date Added</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -44,10 +45,13 @@
             <td><%=u.getLastName()%></td>
             <td><%=u.getUsername()%></td>
             <td><%=u.getDateAdded()%></td>
+            <td><a href="UserController?action=edit&userid=<%= u.getUserid() %>">Update</a></td>
+            <td><a href="UserController?action=delete&userid=<%= u.getUserid() %>">Delete</a></td>
         </tr>
         <%}%>
         </tbody>
     </table>
 </div>
+<br>
 <br>
 <c:import url="footer.jsp" />

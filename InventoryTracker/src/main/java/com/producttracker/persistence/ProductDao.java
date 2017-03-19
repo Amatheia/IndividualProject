@@ -117,30 +117,26 @@ public class ProductDao {
      * @param id the product's id
      */
     public int deleteProduct(int id) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction tx = null;
-
-        int index;
+        Session session = null;
 
         try {
-            tx = session.beginTransaction();
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
             Product product = (Product) session.load(Product.class, id);
             session.delete(product);
-            session.getTransaction().commit();
-            log.info("Deleted product: " + id);
-            index = 1;
-        } catch (RuntimeException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-            index = 0;
-            log.info("Runtime exception to delete product: " + e);
+            transaction.commit();
+            log.info("Deleted category: " + id);
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
         } finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
 
-        return index;
+        return id;
     }
 
     /**
@@ -148,21 +144,21 @@ public class ProductDao {
      * @param product
      */
     public void updateProduct(Product product) {
-        Transaction tx = null;
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = null;
         try {
-            tx = session.beginTransaction();
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
             session.update(product);
-            session.getTransaction().commit();
+            transaction.commit();
             log.info("Updated: " + product);
-        } catch (RuntimeException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-            log.info("Runtime exception to update product: " + e);
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
         } finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
     }
 

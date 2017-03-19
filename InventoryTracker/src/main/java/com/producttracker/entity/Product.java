@@ -1,8 +1,12 @@
 package com.producttracker.entity;
 
+import com.producttracker.util.LocalDateAttributeConverter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 import java.math.BigDecimal;
 
 /**
@@ -21,8 +25,10 @@ public class Product {
     @Column(name = "product_id")
     private int productId;
 
-    @Column(name="add_date")
-    private java.sql.Date addDate;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="add_date", insertable=false, updatable=false)
+    private Date addDate;
 
     @Column(name = "category_name")
     private String categoryName;
@@ -46,10 +52,12 @@ public class Product {
     private BigDecimal totalCost;
 
     @Column(name="order_date")
-    private java.sql.Date orderDate;
+    @Convert(converter = LocalDateAttributeConverter.class)
+    private LocalDate orderDate;
 
-    @Column(name="date_received")
-    private java.sql.Date dateReceived;
+    @Column(name = "date_received")
+    @Convert(converter = LocalDateAttributeConverter.class)
+    private LocalDate dateReceived;
 
     @Column(name = "quantity_received")
     private Integer quantityReceived;
@@ -64,7 +72,8 @@ public class Product {
     private BigDecimal currentValue;
 
     @Column(name="expiration_date")
-    private java.sql.Date expirationDate;
+    @Convert(converter = LocalDateAttributeConverter.class)
+    private LocalDate expirationDate;
 
     @Column(name="notes")
     private String notes;
@@ -100,12 +109,12 @@ public class Product {
      * @param notes  the notes
      * @param active  the active
      */
-    public Product(int productId, java.sql.Date addDate, String categoryName,
+    public Product(int productId, Date addDate, String categoryName,
                 String vendorName, String productName, int quantityOrdered,
                 int weight, BigDecimal perUnitCost, BigDecimal totalCost,
-                java.sql.Date orderDate, java.sql.Date dateReceived,
-                   Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
-                BigDecimal currentValue, java.sql.Date expirationDate,
+                LocalDate orderDate, LocalDate dateReceived,
+                Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
+                BigDecimal currentValue, LocalDate expirationDate,
                 String notes, byte active) {
         this.productId = productId;
         this.addDate = addDate;
@@ -150,17 +159,8 @@ public class Product {
      *
      * @return the addDate
      */
-    public java.sql.Date getAddDate() {
+    public Date getAddDate() {
         return addDate;
-    }
-
-    /**
-     * Sets addDate.
-     *
-     * @param addDate the dateAdded
-     */
-    public void setAddDate(java.sql.Date addDate) {
-        this.addDate = addDate;
     }
 
     /**
@@ -294,7 +294,7 @@ public class Product {
      *
      * @return the orderDate
      */
-    public java.sql.Date getOrderDate() {
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
@@ -303,7 +303,7 @@ public class Product {
      *
      * @param orderDate the orderDate
      */
-    public void setOrderDate(java.sql.Date orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 
@@ -312,7 +312,7 @@ public class Product {
      *
      * @return the dateReceived
      */
-    public java.sql.Date getDateReceived() {
+    public LocalDate getDateReceived() {
         return dateReceived;
     }
 
@@ -321,7 +321,7 @@ public class Product {
      *
      * @param dateReceived the dateReceived
      */
-    public void setDateReceived(java.sql.Date dateReceived) {
+    public void setDateReceived(LocalDate dateReceived) {
         this.dateReceived = dateReceived;
     }
 
@@ -402,7 +402,7 @@ public class Product {
      *
      * @return the expirationDate
      */
-    public java.sql.Date getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
@@ -411,7 +411,7 @@ public class Product {
      *
      * @param expirationDate the expirationDate
      */
-    public void setExpirationDate(java.sql.Date expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 

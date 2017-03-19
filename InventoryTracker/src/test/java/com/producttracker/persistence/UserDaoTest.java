@@ -3,13 +3,12 @@ package com.producttracker.persistence;
 import com.producttracker.entity.User;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.After;
 
 import java.util.Date;
 import java.util.List;
-import java.util.GregorianCalendar;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by amalbaugh on 2/25/17.
@@ -20,7 +19,9 @@ public class UserDaoTest {
 
     @Before
     public void setup() {
+
         dao = new UserDao();
+
     }
 
     @Test
@@ -43,6 +44,20 @@ public class UserDaoTest {
         dao.addUser(addUser);
 
         assertEquals("Last name incorrect", "Blige", dao.getUser(4).getLastName());
+    }
+
+    @Test
+    public void deleteUser(){
+        dao.deleteUser(7);
+        assertEquals("Failed to delete user", null, dao.getUser(7));
+    }
+
+    @Test
+    public void updateUser() throws Exception {
+        User user = dao.getUser(5);
+        user.setUsername("strangerthanparadise");
+        dao.updateUser(user);
+        assertEquals("Username change not made", "strangerthanparadise", user.getUsername());
     }
 
 }

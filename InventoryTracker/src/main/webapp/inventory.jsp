@@ -22,24 +22,24 @@
     <table id="productTable" class="display" cellspacing="0" width="100%">
       <thead>
       <tr>
-        <td>Product Id</td>
-        <td>Add Date</td>
-        <td>Category</td>
-        <td>Vendor</td>
-        <td>Product Name</td>
-        <td>Quantity Ordered</td>
-        <td>Weight</td>
-        <td>Per Unit Cost</td>
-        <td>Total Cost</td>
-        <td>Order Date</td>
-        <td>Date Received</td>
-        <td>Quantity Received</td>
-        <td>Paid Not Received</td>
-        <td>Current Quantity</td>
-        <td>Current Value</td>
-        <td>Expiration Date</td>
-        <td>Notes</td>
-        <td>Active</td>
+        <th>Product Id</th>
+        <th>Add Date</th>
+        <th>Category</th>
+        <th>Vendor</th>
+        <th>Product Name</th>
+        <th>Quantity Ordered</th>
+        <th>Weight</th>
+        <th>Per Unit Cost</th>
+        <th>Total Cost</th>
+        <th>Order Date</th>
+        <th>Date Received</th>
+        <th>Quantity Received</th>
+        <th>Paid Not Received</th>
+        <th>Current Quantity</th>
+        <th>Current Value</th>
+        <th>Expiration Date</th>
+        <th>Notes</th>
+        <th>Action</th>
       </tr>
       </thead>
       <tbody>
@@ -66,7 +66,8 @@
         <td><%=p.getCurrentValue()%></td>
         <td><%=p.getExpirationDate()%></td>
         <td><%=p.getNotes()%></td>
-        <td><%=p.getActive()%></td>
+        <td><a href="ProductController?action=edit&productId=<%= p.getProductId() %>">Update</a></td>
+        <td><a href="ProductController?action=delete&productId=<%= p.getProductId() %>">Delete</a></td>
       </tr>
       <%}%>
       </tbody>

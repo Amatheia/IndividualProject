@@ -1,9 +1,11 @@
 package com.producttracker.entity;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.*;
+
 import java.util.Date;
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * A class to represent a user.
@@ -12,6 +14,8 @@ import javax.persistence.*;
  */
 
 @Entity
+@DynamicInsert
+@DynamicUpdate
 @Table(name = "users")
 public class User {
 
@@ -38,7 +42,7 @@ public class User {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="date_added")
+    @Column(name="date_added", insertable=false, updatable=false)
     private Date dateAdded;
 
     /**

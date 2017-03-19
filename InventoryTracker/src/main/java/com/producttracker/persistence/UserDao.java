@@ -146,7 +146,6 @@ public class UserDao {
      */
     public void updateUser(User user) {
         Session session = null;
-
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();

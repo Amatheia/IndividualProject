@@ -88,6 +88,56 @@ public class VendorDao {
         return id;
     }
 
+    /**
+     * delete a vendor by id
+     * @param id the vendor's id
+     */
+    public int deleteVendor(int id) {
+        Session session = null;
+
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+            Vendor vendor = (Vendor) session.load(Vendor.class, id);
+            session.delete(vendor);
+            transaction.commit();
+            log.info("Deleted vendor: " + id);
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+        return id;
+    }
+
+    /**
+     * Update the vendor
+     * @param vendor
+     */
+    public void updateVendor(Vendor vendor) {
+        Session session = null;
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+            session.update(vendor);
+            transaction.commit();
+            log.info("Updated: " + vendor);
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }

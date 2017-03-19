@@ -49,16 +49,16 @@
 - [X] Add tests for new functionality
 
 ### Week 8
-- [ ] Time log entries
+- [X] Time log entries
 - [X] Code reviews
-- [ ] Finish CRUD for all entities
-- [ ] Add user registration
-- [ ] Simplify design as needed
+- [X] Finish CRUD for all entities
+- [X] Simplify design as needed
 
 ### Week 9
 - [ ] Time log entries
-- [ ] Business Logic
+- [ ] Add user registration
 - [ ] Add Spring
+- [ ] Add tests for new functionality
 
 ### Week 10
 - [ ] Time log entries
@@ -72,9 +72,12 @@
 
 ### Week 12
 - [ ] Time log entries
+- [ ] Incorporate remaining code
+- [ ] Simplify design as needed
 
 ### Week 13
 - [ ] Time log entries
+- [ ] Fix design, code, etc.
 
 ### Week 14
 - [ ] Time log entries
