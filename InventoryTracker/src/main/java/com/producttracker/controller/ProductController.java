@@ -3,6 +3,7 @@ package com.producttracker.controller;
 import com.producttracker.entity.Product;
 import com.producttracker.persistence.ProductDao;
 import org.apache.log4j.Logger;
+import org.hibernate.type.StandardBasicTypes;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -85,16 +86,55 @@ public class ProductController extends HttpServlet {
             e.printStackTrace();
         }
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate orderDate = LocalDate.parse(request.getParameter("orderDate"), formatter);
             product.setOrderDate(orderDate);
         } catch (Exception e) {
             e.printStackTrace();
         }
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate dateReceived = LocalDate.parse(request.getParameter("dateReceived"), formatter);
             product.setDateReceived(dateReceived);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            product.setQuantityReceived(Integer.parseInt(request.getParameter("quantityReceived")));
+        } catch (NumberFormatException e) {
+            product.setQuantityReceived(null);
+        }
+
+        try {
+            product.setPaidNotReceived(Integer.parseInt(request.getParameter("paidNotReceived")));
+        } catch (NumberFormatException e) {
+            product.setPaidNotReceived(null);
+        }
+
+        try {
+            product.setCurrentQuantity(Integer.parseInt(request.getParameter("currentQuantity")));
+        } catch (NumberFormatException e) {
+            product.setCurrentQuantity(null);
+        }
+
+        try {
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+            symbols.setGroupingSeparator(',');
+            symbols.setDecimalSeparator('.');
+            String pattern = "#,####.00";
+            DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+            decimalFormat.setParseBigDecimal(true);
+            // parse the string
+            BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("currentValue"));
+            product.setCurrentValue(bigDecimal);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+            LocalDate expirationDate = LocalDate.parse(request.getParameter("expirationDate"), formatter);
+            product.setExpirationDate(expirationDate);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -75,32 +75,72 @@
         <div class="form-group row">
             <label for="perUnitCost" class="col-xs-4 control-label">Per Unit Cost:</label>
             <div class="col-xs-8">
-                <input type="number" class="form-control" id="perUnitCost" name="perUnitCost" value="<c:out value="${product.perUnitCost}" />" />
+                <input type="text" class="form-control" id="perUnitCost" name="perUnitCost" placeholder="$0.00" value="<c:out value="${product.perUnitCost}" />" />
             </div>
         </div>
         <div class="form-group row">
             <label for="totalCost" class="col-xs-4 control-label">Total Cost:</label>
             <div class="col-xs-8">
                 <input type="hidden" id="totalCost" class="form-control">
-                <input class="totalCost" name="totalCost" type="number" id="totalCost" disabled="disabled" style="" />
+                <input class="totalCost" name="totalCost" type="text" id="totalCost" disabled="disabled" style="" />
             </div>
         </div>
         <div class="form-group row">
             <label for="orderDate" class="col-xs-4 control-label">Order Date:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="orderDate" name="orderDate" value="<c:out value="${product.orderDate}" />" />
+                <input type="text" class="form-control" id="orderDate" name="orderDate" placeholder="YYYY-MM-DD" value="<c:out value="${product.orderDate}" />" />
             </div>
         </div>
         <div class="form-group row">
             <label for="dateReceived" class="col-xs-4 control-label">Date Received:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="dateReceived" name="dateReceived" value="<c:out value="${product.dateReceived}" />" />
+                <input type="text" class="form-control" id="dateReceived" name="dateReceived" placeholder="YYYY-MM-DD" value="<c:out value="${product.dateReceived}" />" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="quantityReceived" class="col-xs-4 control-label">Quantity Received:</label>
+            <div class="col-xs-8">
+                <input type="number" class="form-control" id="quantityReceived" name="quantityReceived" value="<c:out value="${product.quantityReceived}" />" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="paidNotReceived" class="col-xs-4 control-label">Paid For But Did Not Receive:</label>
+            <div class="col-xs-8">
+                <input type="number" class="form-control" id="paidNotReceived" name="paidNotReceived" value="<c:out value="${product.paidNotReceived}" />" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="currentQuantity" class="col-xs-4 control-label">Current Quantity:</label>
+            <div class="col-xs-8">
+                <input type="number" class="form-control" id="currentQuantity" name="currentQuantity" value="<c:out value="${product.currentQuantity}" />" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="currentValue" class="col-xs-4 control-label">Current Value:</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="currentValue" name="currentValue" placeholder="$0.00" value="<c:out value="${product.currentValue}" />" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="expirationDate" class="col-xs-4 control-label">Expiration Date:</label>
+            <div class="col-xs-8">
+                <input type="number" class="form-control" id="expirationDate" name="expirationDate" placeholder="MM-DD-YYYY" value="<c:out value="${product.expirationDate}" />" />
             </div>
         </div>
         <div class="form-group row">
             <label for="notes" class="col-xs-4 control-label">Notes:</label>
             <div class="col-xs-8">
                 <input type="text" class="form-control" id="notes" name="notes" value="<c:out value="${product.notes}" />" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <div class="form-check" id="userOptions">
+                     <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="active" name="active"
+                               value="Active"> Active <br/>
+                     </label>
+                </div>
             </div>
         </div>
         <br>

@@ -22,6 +22,10 @@ create table user_roles (
 ALTER TABLE user_roles ADD FOREIGN KEY (role_name, username) 
 REFERENCES users(role_name, username);
 
+CREATE TRIGGER role_after_insert AFTER INSERT ON `users` 
+    FOR EACH ROW
+    INSERT INTO user_roles (username, role_name) VALUES (new.username, new.role_name);
+
 
 create table categories (
   `category_id` int(12) NOT NULL auto_increment,
@@ -63,12 +67,5 @@ create table products (
   `notes` varchar(100),
   `active`  TINYINT(1) DEFAULT 0,
   PRIMARY KEY  (product_id)
-);
-
-INSERT INTO categories (category_name, description) VALUES ("Green Tea", "green teas");
-INSERT INTO vendors (vendor_name, contact_name, address, city, state_province, postal_code, phone)
-	VALUES ("Royal Coffee", "Jim Johnson", "325 Spaight St", "Madison", "WI", "53719", "608-535-2756");
-	
-INSERT INTO products (add_date, category_name, vendor_name, product_name, quantity_ordered, weight, per_unit_cost)
-	VALUES (NOW(), "Coffee", "Royal Coffee", "Indonesian Bali Blue Moon", "5", "60", "3.50");	
+);	
 

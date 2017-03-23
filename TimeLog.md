@@ -30,3 +30,4 @@
 | 03/10/17| Individual Project | 2 | |
 | 03/17/17| Individual Project | 2 | |
 | 03/18/17| Individual Project | 4 | |
+| 03/23/17| Week 9 exercise, presentation feedback, Individual Project | 2 | |
