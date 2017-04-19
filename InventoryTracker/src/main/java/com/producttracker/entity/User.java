@@ -13,10 +13,9 @@ import javax.persistence.Table;
  * @author amatheia
  */
 
-@Entity
+@Entity (name = "users")
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "users")
 public class User {
 
     @Id

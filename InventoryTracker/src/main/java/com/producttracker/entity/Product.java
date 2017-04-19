@@ -15,8 +15,7 @@ import java.math.BigDecimal;
  * @author amatheia
  */
 
-@Entity
-@Table(name = "products")
+@Entity (name = "products")
 public class Product {
 
     @Id

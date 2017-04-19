@@ -10,8 +10,7 @@ import javax.persistence.*;
  * @author amatheia
  */
 
-@Entity
-@Table(name = "categories")
+@Entity (name = "categories")
 public class Category {
 
     @Id

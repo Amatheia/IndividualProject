@@ -3,7 +3,6 @@ package com.producttracker.controller;
 import com.producttracker.entity.Product;
 import com.producttracker.persistence.ProductDao;
 import org.apache.log4j.Logger;
-import org.hibernate.type.StandardBasicTypes;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -18,7 +18,9 @@
             </div>
         </form>
     </div>
+      <h4><a href="register.jsp">Create an account</a></h4>
   </div>
+  <br/>
   <div align="center">
    <p>Copyright Amatheia 2017. All rights reserved.</p><br/>
   </div>

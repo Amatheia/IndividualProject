@@ -28,8 +28,7 @@ what is out/bad, and needs to be ordered/will be arriving.
 * Unit Testing
   * JUnit tests to achieve 80% code coverage
 * Independent Research Topic
-  * Spring
-  * AngularJS
+  * jQuery
 
 ### [Design](Design.pdf)
 

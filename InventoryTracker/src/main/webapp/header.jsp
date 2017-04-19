@@ -1,4 +1,6 @@
 <header>
-    <h2 align="center">Food Product Tracker</h2>
     <br>
+    <div align="center">
+        <img src="<c:url value="/images/inventorytrackerlogo.png"/>" />
+    </div>
 </header>

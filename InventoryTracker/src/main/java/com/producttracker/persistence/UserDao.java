@@ -60,19 +60,22 @@ public class UserDao {
         return user;
     }
 
-    /** Retrieve users by lastname
+    /** Retrieve users by username
      *
-     * @param lastName User's last name which is the search criteria
+     * @param username User's username which is the search criteria
      * @return User
      */
-    public List<User> getUsersByLastName(String lastName) {
-        List<User> users = new ArrayList<User>();
+    public User getUserByUsername(String username) {
+        User user = null;
         Session session = null;
         try {
             session = openSession();
             Criteria criteria = session.createCriteria(User.class);
-            criteria.add(Restrictions.eq("lastName", lastName));
-            users = criteria.list();
+            criteria.add(Restrictions.eq("username", username));
+            Object result = criteria.uniqueResult();
+            if (result != null) {
+                user = (User) result;
+            }
         } catch (HibernateException he) {
             log.error("Exception: " + he);
         } catch (Exception e) {
@@ -82,7 +85,7 @@ public class UserDao {
                 session.close();
             }
         }
-        return users;
+        return user;
     }
 
     /**

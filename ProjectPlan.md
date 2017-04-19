@@ -55,32 +55,30 @@
 - [X] Simplify design as needed
 
 ### Week 9
-- [ ] Time log entries
-- [ ] Add user registration
-- [ ] Add Spring
-- [ ] Add tests for new functionality
+- [X] Time log entries
+- [X] Add user registration
 
 ### Week 10
-- [ ] Time log entries
-- [ ] Spring integration
+- [X] Time log entries
 
 ### Week 11
-- [ ] Time log entries
-- [ ] Integration with Team Project web service
-- [ ] AngularJS
-- [ ] Fix design, code, etc.
+- [X] Time log entries
 
 ### Week 12
-- [ ] Time log entries
-- [ ] Incorporate remaining code
-- [ ] Simplify design as needed
+- [X] Time log entries
 
 ### Week 13
 - [ ] Time log entries
+- [ ] Simplify design as needed
+- [ ] Integration with Team Project web service
+- [ ] Add jQuery
+- [ ] add tests
 - [ ] Fix design, code, etc.
 
 ### Week 14
 - [ ] Time log entries
+- [ ] jQuery, fix code as needed
+- [ ] add tests
 - [ ] Create final presentation
 
 ### Week 15

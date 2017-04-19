@@ -75,4 +75,15 @@
     <url-pattern>/ProductController</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>UserRegister</display-name>
+    <servlet-name>UserRegister</servlet-name>
+    <servlet-class>com.producttracker.controller.UserRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserRegister</servlet-name>
+    <url-pattern>/UserRegister</url-pattern>
+  </servlet-mapping>
+
 </web-app>

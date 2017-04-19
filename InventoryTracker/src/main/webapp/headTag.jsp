@@ -24,5 +24,12 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
 
+    <!-- build:js scripts/scripts.js -->
+    <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.js"></script>
+    <script type="text/javascript" src="webjars/angularjs/1.3.8/angular.min.js"></script>
+    <script type="text/javascript" src="webjars/angularjs/1.3.8/angular-resource.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap-material-design/0.2.1/js/material.js"></script>
+    <!-- endbuild -->
+
   </head>
 <body>

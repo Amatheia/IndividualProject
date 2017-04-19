@@ -3,15 +3,13 @@ package com.producttracker.persistence;
 import com.producttracker.entity.User;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.After;
 
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 /**
- * Created by amalbaugh on 2/25/17.
+ * Created by amatheia.
  */
 public class UserDaoTest {
 
@@ -28,6 +26,13 @@ public class UserDaoTest {
     public void getAllUsers() throws Exception {
         List<User> users = dao.getAllUsers();
         assertTrue(users.size() > 0);
+    }
+
+    @Test
+    public void getUserByUsername() throws Exception {
+        String username = "scientist";
+        User user = dao.getUserByUsername(username);
+        assertEquals("Username", "scientist", user.getUsername());
     }
 /*
     @Test

@@ -22,24 +22,28 @@
 <div align="center">
     <div class="container">
         <div style="width:600px;" align="left">
-            <form role="form" class="form-horizontal" id="inventoryCount" action="inventoryCount" method="post">
+            <form role="form" class="form-horizontal" id="InventoryCount" action="InventoryCount" method="post">
                 <div class="form-group row">
                     <label for="category" class="col-xs-4 control-label">Display Products by Category:</label>
                     <div class="col-xs-8">
                         <select class="form-control" id="category" name="category">
-                            <%-- need to pull options from database --%>
-                            <option>Coffee</option>
-                            <option>Tea</option>
-                            <option>Fruit</option>
-                            <option>Vegetables</option>
+                            <%
+                                CategoryDao categorylist = new CategoryDao();
+                                List<Category> list = categorylist.getAllCategories();
+                                for (Category cat : list) {
+                            %>
+                            <option><%=cat.getCategoryName()%></option>
+
+                            <%}%>
                         </select>
                     </div>
                 </div>
+                <br>
                 <div align="center">
                   <div class="container">
                       <div class="row">
                           <div class="col-xs-2">
-                              Product Name
+                              Product
                           </div>
                           <div class="col-xs-2">
                               Quantity
