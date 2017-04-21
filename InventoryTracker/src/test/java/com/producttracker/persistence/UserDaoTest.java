@@ -1,12 +1,6 @@
 package com.producttracker.persistence;
 
-import com.producttracker.entity.User;
 import org.junit.Before;
-import org.junit.Test;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by amatheia.
@@ -22,6 +16,8 @@ public class UserDaoTest {
 
     }
 
+    /*
+
     @Test
     public void getAllUsers() throws Exception {
         List<User> users = dao.getAllUsers();
@@ -34,7 +30,7 @@ public class UserDaoTest {
         User user = dao.getUserByUsername(username);
         assertEquals("Username", "scientist", user.getUsername());
     }
-/*
+
     @Test
     public void addUser(){
         User addUser = new User();

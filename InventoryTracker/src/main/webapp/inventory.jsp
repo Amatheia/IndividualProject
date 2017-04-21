@@ -51,8 +51,8 @@
       <tr>
         <td><%=p.getProductId()%></td>
         <td><%=p.getAddDate()%></td>
-        <td><%=p.getCategoryName()%></td>
-        <td><%=p.getVendorName()%></td>
+        <td><%=p.getCategoryId()%></td>
+        <td><%=p.getVendorId()%></td>
         <td><%=p.getProductName()%></td>
         <td><%=p.getQuantityOrdered()%></td>
         <td><%=p.getWeight()%></td>
@@ -64,7 +64,7 @@
         <td><%=p.getPaidNotReceived()%></td>
         <td><%=p.getCurrentQuantity()%></td>
         <td><%=p.getCurrentValue()%></td>
-        <td><%=p.getExpirationDate()%></td>
+        <td><%=p.getExpiration()%></td>
         <td><%=p.getNotes()%></td>
         <td><a href="ProductController?action=edit&productId=<%= p.getProductId() %>">Update</a></td>
         <td><a href="ProductController?action=delete&productId=<%= p.getProductId() %>">Delete</a></td>

@@ -3,6 +3,7 @@ package com.producttracker.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * A class to represent a vendor.
@@ -214,4 +215,5 @@ public class Vendor {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }

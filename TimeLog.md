@@ -32,4 +32,5 @@
 | 03/18/17| Individual Project | 4 | |
 | 03/23/17| Week 9 exercise, presentation feedback, Individual Project | 2 | |
 | 04/05/17| Multithreader exercise | 2 | |
-| 04/19/17| Individual Project | 2 | |
+| 04/19/17| Individual Project, Presentation feedback | 3 | |
+| 04/20/17| Individual Project | 6 | |

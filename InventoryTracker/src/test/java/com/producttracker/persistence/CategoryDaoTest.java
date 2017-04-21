@@ -1,12 +1,6 @@
 package com.producttracker.persistence;
 
-import com.producttracker.entity.Category;
 import org.junit.Before;
-import org.junit.Test;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by amalbaugh on 2/25/17.
@@ -20,6 +14,7 @@ public class CategoryDaoTest {
         dao = new CategoryDao();
     }
 
+   /*
     @Test
     public void getAllCategories() throws Exception {
         List<Category> categories = dao.getAllCategories();
@@ -37,5 +32,5 @@ public class CategoryDaoTest {
 
         assertEquals("Category name incorrect", "Coffee", dao.getCategory(1).getCategoryName());
     }
-
+    */
 }

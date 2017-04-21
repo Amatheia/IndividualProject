@@ -4,7 +4,7 @@
 
 <div align="center">
   <h2>Invalid userid/password combination.</h2><br />
-  <a href="/login.jsp">Try again</a>
+  <a href="${pageContext.request.contextPath}/login.jsp">Try again</a>
 </div>
 
 <div align="center">

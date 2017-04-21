@@ -6,14 +6,18 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
  * A servlet to get categories.
  * @author amatheia
  */
-
+@ServletSecurity(@HttpConstraint(rolesAllowed = "admin"))
 public class CategoryController extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());

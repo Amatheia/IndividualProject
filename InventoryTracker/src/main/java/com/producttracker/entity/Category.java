@@ -3,6 +3,7 @@ package com.producttracker.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * A class to represent a category.
@@ -96,6 +97,15 @@ public class Category {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "categoryId=" + categoryId +
+                ", categoryName=" + categoryName +
+                ", description=" + description +
+                '}';
     }
 
 }

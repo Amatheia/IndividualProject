@@ -19,8 +19,8 @@ create table user_roles (
     PRIMARY KEY (username, role_name)
 );
 
-ALTER TABLE user_roles ADD FOREIGN KEY (role_name, username) 
-REFERENCES users(role_name, username);
+ALTER TABLE user_roles ADD CONSTRAINT user_roles_ibfk_1 FOREIGN KEY (role_name, username)
+    REFERENCES users(role_name, username) ON DELETE CASCADE ON UPDATE CASCADE;
 
 CREATE TRIGGER role_after_insert AFTER INSERT ON `users` 
     FOR EACH ROW
@@ -48,10 +48,10 @@ create table vendors (
 );
 
 create table products (
-  `product_id` int(12) NOT NULL auto_increment,
+  `product_id` int(12) NOT NULL auto_increment PRIMARY KEY,
   `add_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `category_name` varchar(25),
-  `vendor_name` varchar(40),
+  `category_id` int(12) NOT NULL,
+  `vendor_id` int(12) NOT NULL,
   `product_name` varchar(30) NOT NULL,
   `quantity_ordered` int NOT NULL,
   `weight` int NOT NULL,
@@ -63,9 +63,16 @@ create table products (
   `paid_not_received` int,
   `current_quantity` int,
   `current_value` numeric(15,2),
-  `expiration_date` datetime,
+  `expiration` varchar(30),
   `notes` varchar(100),
   `active`  TINYINT(1) DEFAULT 0,
-  PRIMARY KEY  (product_id)
+  FOREIGN KEY fk_cat(category_id)
+  REFERENCES categories(category_id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT,
+  FOREIGN KEY fk_vend(vendor_id)
+  REFERENCES vendors(vendor_id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT
 );	
 

@@ -62,7 +62,8 @@
                     </div>
                 </div>
                 <div align="center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+                    <button type="reset" class="btn btn-default" value="reset">Reset</button>
                 </div>
             </form>
         </div>

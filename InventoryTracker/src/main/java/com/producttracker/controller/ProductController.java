@@ -1,11 +1,14 @@
 package com.producttracker.controller;
 
 import com.producttracker.entity.Product;
+import com.producttracker.persistence.CategoryDao;
 import com.producttracker.persistence.ProductDao;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +23,14 @@ import java.time.format.DateTimeFormatter;
  * A servlet to get products.
  * @author amatheia
  */
-
+@ServletSecurity(@HttpConstraint(rolesAllowed = "admin"))
 public class ProductController extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
     private static String INSERT_OR_EDIT = "/products.jsp";
     private static String LIST_PRODUCT = "/inventory.jsp";
     private ProductDao dao;
+    private CategoryDao daoCat;
 
     public ProductController() {
         super();
@@ -66,8 +70,16 @@ public class ProductController extends HttpServlet {
         log.info("In the doPost()");
 
         Product product = new Product();
-        product.setCategoryName(request.getParameter("categoryName"));
-        product.setVendorName(request.getParameter("vendorName"));
+        try {
+            product.setCategoryId(Integer.parseInt(request.getParameter("category1")));
+        }catch(NumberFormatException ex){
+            ex.printStackTrace();
+        }
+        try {
+            product.setVendorId(Integer.parseInt(request.getParameter("vendor1")));
+        }catch(NumberFormatException ex){
+            ex.printStackTrace();
+        }
         product.setProductName(request.getParameter("productName"));
         product.setQuantityOrdered(Integer.parseInt(request.getParameter("quantityOrdered")));
         product.setWeight(Integer.parseInt(request.getParameter("weight")));
@@ -130,13 +142,7 @@ public class ProductController extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-            LocalDate expirationDate = LocalDate.parse(request.getParameter("expirationDate"), formatter);
-            product.setExpirationDate(expirationDate);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        product.setExpiration(request.getParameter("expiration"));
         product.setNotes(request.getParameter("notes"));
         String productid = request.getParameter("productId");
         if(productid == null || productid.isEmpty())

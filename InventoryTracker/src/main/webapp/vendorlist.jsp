@@ -2,9 +2,7 @@
 <c:set var="title" value="Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
-<%@page import="java.util.List"%>
-<%@page import="com.producttracker.entity.Vendor"%>
-<%@page import="com.producttracker.persistence.VendorDao"%>
+<jsp:useBean id="vendors" class="com.producttracker.persistence.VendorDao"/>
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
@@ -35,24 +33,20 @@
         </tr>
         </thead>
         <tbody>
-        <%
-            VendorDao vendorlist = new VendorDao();
-            List<Vendor> list = vendorlist.getAllVendors();
-            for (Vendor v : list) {
-        %>
-        <tr>
-            <td><%=v.getVendorId()%></td>
-            <td><%=v.getVendorName()%></td>
-            <td><%=v.getContactName()%></td>
-            <td><%=v.getAddress()%></td>
-            <td><%=v.getCity()%></td>
-            <td><%=v.getStateProvince()%></td>
-            <td><%=v.getPostalCode()%></td>
-            <td><%=v.getPhone()%></td>
-            <td><a href="VendorController?action=edit&vendorId=<%= v.getVendorId() %>">Update</a></td>
-            <td><a href="VendorController?action=delete&vendorId=<%= v.getVendorId() %>">Delete</a></td>
-        </tr>
-        <%}%>
+        <c:forEach items="${vendors.getAllVendors()}" var="vendor">
+            <tr>
+                <td><c:out value="${vendor.vendorId}" /></td>
+                <td><c:out value="${vendor.vendorName}" /></td>
+                <td><c:out value="${vendor.contactName}" /></td>
+                <td><c:out value="${vendor.address}" /></td>
+                <td><c:out value="${vendor.city}" /></td>
+                <td><c:out value="${vendor.stateProvince}" /></td>
+                <td><c:out value="${vendor.postalCode}" /></td>
+                <td><c:out value="${vendor.phone}" /></td>
+                <td><a href="VendorController?action=edit&vendorId=<c:out value="${vendor.vendorId}"/>">Update</a></td>
+                <td><a href="VendorController?action=delete&vendorId=<c:out value="${vendor.vendorId}"/>">Delete</a></td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>

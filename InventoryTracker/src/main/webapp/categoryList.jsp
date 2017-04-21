@@ -2,9 +2,7 @@
 <c:set var="title" value="Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
-<%@page import="java.util.List"%>
-<%@page import="com.producttracker.entity.Category"%>
-<%@page import="com.producttracker.persistence.CategoryDao"%>
+<jsp:useBean id="categories" class="com.producttracker.persistence.CategoryDao"/>
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
@@ -30,19 +28,15 @@
         </tr>
         </thead>
         <tbody>
-        <%
-            CategoryDao categorylist = new CategoryDao();
-            List<Category> list = categorylist.getAllCategories();
-            for (Category c : list) {
-        %>
-        <tr>
-            <td><%=c.getCategoryId()%></td>
-            <td><%=c.getCategoryName()%></td>
-            <td><%=c.getDescription()%></td>
-            <td><a href="CategoryController?action=edit&categoryId=<%= c.getCategoryId() %>">Update</a></td>
-            <td><a href="CategoryController?action=delete&categoryId=<%= c.getCategoryId() %>">Delete</a></td>
-        </tr>
-        <%}%>
+        <c:forEach items="${categories.getAllCategories()}" var="category">
+            <tr>
+                <td><c:out value="${category.categoryId}" /></td>
+                <td><c:out value="${category.categoryName}" /></td>
+                <td><c:out value="${category.description}" /></td>
+                <td><a href="CategoryController?action=edit&categoryId=<c:out value="${category.categoryId}"/>">Update</a></td>
+                <td><a href="CategoryController?action=delete&categoryId=<c:out value="${category.categoryId}"/>">Delete</a></td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>

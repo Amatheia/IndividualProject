@@ -51,7 +51,8 @@
                 </div>
                 <br/>
                 <div align="center">
-                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                    <button type="reset" class="btn btn-default" value="reset">Reset</button>
                 </div>
             </form>
         </div>

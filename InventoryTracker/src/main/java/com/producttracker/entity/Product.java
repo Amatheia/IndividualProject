@@ -5,9 +5,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.*;
 
 /**
  * A class to represent a product.
@@ -29,11 +29,11 @@ public class Product {
     @Column(name="add_date", insertable=false, updatable=false)
     private Date addDate;
 
-    @Column(name = "category_name")
-    private String categoryName;
+    @Column(name = "category_id")
+    private int categoryId;
 
-    @Column(name="vendor_name")
-    private String vendorName;
+    @Column(name = "vendor_id")
+    private int vendorId;
 
     @Column(name="product_name")
     private String productName;
@@ -70,9 +70,8 @@ public class Product {
     @Column(name = "current_value")
     private BigDecimal currentValue;
 
-    @Column(name="expiration_date")
-    @Convert(converter = LocalDateAttributeConverter.class)
-    private LocalDate expirationDate;
+    @Column(name="expiration")
+    private String expiration;
 
     @Column(name="notes")
     private String notes;
@@ -89,10 +88,10 @@ public class Product {
     /**
      * Instantiates a new Product.
      *
-     * @param productId     the productId
+     * @param productId     the product id
      * @param addDate   the addDate
-     * @param categoryName   the category name
-     * @param vendorName    the vendor name
+     * @param categoryId   the category id
+     * @param vendorId    the vendor id
      * @param productName    the product name
      * @param quantityOrdered    the quantityOrdered
      * @param weight    the weight
@@ -104,21 +103,21 @@ public class Product {
      * @param paidNotReceived   the paidNotReceived
      * @param currentQuantity  the currentQuantity
      * @param currentValue  the currentValue
-     * @param expirationDate  the expirationDate
+     * @param expiration  the expiration
      * @param notes  the notes
-     * @param active  the active
+     * @param active  active
      */
-    public Product(int productId, Date addDate, String categoryName,
-                String vendorName, String productName, int quantityOrdered,
+    public Product(int productId, Date addDate, int categoryId,
+                   int vendorId, String productName, int quantityOrdered,
                 int weight, BigDecimal perUnitCost, BigDecimal totalCost,
                 LocalDate orderDate, LocalDate dateReceived,
                 Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
-                BigDecimal currentValue, LocalDate expirationDate,
+                BigDecimal currentValue, String expiration,
                 String notes, byte active) {
         this.productId = productId;
         this.addDate = addDate;
-        this.categoryName = categoryName;
-        this.vendorName = vendorName;
+        this.categoryId = categoryId;
+        this.vendorId = vendorId;
         this.productName = productName;
         this.quantityOrdered = quantityOrdered;
         this.weight = weight;
@@ -130,7 +129,7 @@ public class Product {
         this.paidNotReceived = paidNotReceived;
         this.currentQuantity = currentQuantity;
         this.currentValue = currentValue;
-        this.expirationDate = expirationDate;
+        this.expiration = expiration;
         this.notes = notes;
         this.active = active;
     }
@@ -163,39 +162,39 @@ public class Product {
     }
 
     /**
-     * Gets categoryName.
+     * Gets category id.
      *
-     * @return the categoryName
+     * @return the category id
      */
-    public String getCategoryName() {
-        return categoryName;
+    public int getCategoryId() {
+        return categoryId;
     }
 
     /**
-     * Sets categoryName.
+     * Sets category id.
      *
-     * @param categoryName the last name
+     * @param categoryId the category id
      */
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     /**
-     * Gets vendorName.
+     * Gets vendor id.
      *
-     * @return the vendorName
+     * @return the vendor id
      */
-    public String getVendorName() {
-        return vendorName;
+    public int getVendorId() {
+        return vendorId;
     }
 
     /**
-     * Sets vendorName.
+     * Sets vendor id.
      *
-     * @param vendorName the vendorName
+     * @param vendorId the vendor id
      */
-    public void setVendorName(String vendorName) {
-        this.vendorName = vendorName;
+    public void setVendorId(int vendorId) {
+        this.vendorId = vendorId;
     }
 
     /**
@@ -397,21 +396,21 @@ public class Product {
     }
 
     /**
-     * Gets expirationDate.
+     * Gets expiration.
      *
-     * @return the expirationDate
+     * @return the expiration
      */
-    public LocalDate getExpirationDate() {
-        return expirationDate;
+    public String getExpiration() {
+        return expiration;
     }
 
     /**
-     * Sets expirationDate.
+     * Sets expiration.
      *
-     * @param expirationDate the expirationDate
+     * @param expiration the expiration
      */
-    public void setExpirationDate(LocalDate expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setExpiration(String expiration) {
+        this.expiration = expiration;
     }
 
     /**

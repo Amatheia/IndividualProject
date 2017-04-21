@@ -10,7 +10,7 @@
                 <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter first name">
             </div>
             <div class="form-group">
-                <label for="lastname">First Name:</label>
+                <label for="lastname">Last Name:</label>
                 <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Enter last name">
             </div>
             <div class="form-group">

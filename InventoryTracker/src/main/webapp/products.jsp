@@ -1,11 +1,8 @@
 <%@include file="taglib.jsp"%>
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
-<%@page import="java.util.List"%>
-<%@page import="com.producttracker.entity.Category"%>
-<%@page import="com.producttracker.persistence.CategoryDao"%>
-<%@page import="com.producttracker.entity.Vendor"%>
-<%@page import="com.producttracker.persistence.VendorDao"%>
+<jsp:useBean id="categories" class="com.producttracker.persistence.CategoryDao"/>
+<jsp:useBean id="vendors" class="com.producttracker.persistence.VendorDao"/>
 
 <div class="span6">
     <h2 style="padding-left:30px;">Add or Edit Product</h2>
@@ -25,32 +22,22 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="categoryName" class="col-xs-4 control-label">Category:</label>
+            <label for="category1" class="col-xs-4 control-label">Category:</label>
             <div class="col-xs-8">
-                <select class="form-control" id="categoryName" name="categoryName">
-                    <%
-                        CategoryDao categorylist = new CategoryDao();
-                        List<Category> list = categorylist.getAllCategories();
-                        for (Category cat : list) {
-                    %>
-                        <option><%=cat.getCategoryName()%></option>
-
-                    <%}%>
-                </select>
+                  <select class="form-control" id="category1" name="category1">
+                      <c:forEach items="${categories.getAllCategories()}" var="category">
+                          <option value='<c:out value="${category.categoryId}"/>'><c:out value="${category.categoryName}"/></option>
+                      </c:forEach>
+                  </select>
             </div>
         </div>
         <div class="form-group row">
-            <label for="vendorName" class="col-xs-4 control-label">Vendor:</label>
+            <label for="vendor1" class="col-xs-4 control-label">Vendor:</label>
             <div class="col-xs-8">
-                <select class="form-control" id="vendorName" name="vendorName">
-                    <%
-                        VendorDao vendorlist = new VendorDao();
-                        List<Vendor> index = vendorlist.getAllVendors();
-                        for (Vendor vend : index) {
-                    %>
-                        <option><%=vend.getVendorName()%></option>
-
-                    <%}%>
+                <select class="form-control" id="vendor1" name="vendor1">
+                    <c:forEach items="${vendors.getAllVendors()}" var="vendor">
+                        <option value='<c:out value="${vendor.vendorId}"/>'><c:out value="${vendor.vendorName}"/></option>
+                    </c:forEach>
                 </select>
             </div>
         </div>
@@ -122,9 +109,9 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="expirationDate" class="col-xs-4 control-label">Expiration Date:</label>
+            <label for="expiration" class="col-xs-4 control-label">Expiration:</label>
             <div class="col-xs-8">
-                <input type="number" class="form-control" id="expirationDate" name="expirationDate" placeholder="MM-DD-YYYY" value="<c:out value="${product.expirationDate}" />" />
+                <input type="text" class="form-control" id="expiration" name="expiration" value="<c:out value="${product.expiration}" />" />
             </div>
         </div>
         <div class="form-group row">
@@ -146,7 +133,7 @@
         <br>
         <div align="center">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <input type="Reset" name="cmdReset" value="RESET">
+            <button type="reset" class="btn btn-default" value="reset">Reset</button>
         </div>
     </form>
     </div>
