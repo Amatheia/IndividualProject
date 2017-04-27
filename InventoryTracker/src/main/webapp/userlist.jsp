@@ -11,13 +11,15 @@
 </script>
 
 <div class="span6">
-    <h2 style="padding-left:30px;">Users</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
 </div>
+<div align="center">
+    <h2>Users</h2>
+</div>
+<br>
 <div class="container-fluid">
-    <h2>Search Results: </h2>
     <table id="userTable" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>

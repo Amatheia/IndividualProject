@@ -3,6 +3,11 @@
 <%@include file="header.jsp"%>
 
 <body>
-<h2>Error 403. Access denied. Must have admin privileges.</h2>
+<c:import url="navmenu.jsp" />
+<br>
+  <div align="center">
+    <h2>Access denied. Must have admin privileges.</h2>
+    <!-- button to request admin access? -->
+  </div>
 </body>
 </html>

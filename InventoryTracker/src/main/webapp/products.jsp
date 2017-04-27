@@ -5,13 +5,13 @@
 <jsp:useBean id="vendors" class="com.producttracker.persistence.VendorDao"/>
 
 <div class="span6">
-    <h2 style="padding-left:30px;">Add or Edit Product</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
-  </div>
+</div>
+<div align="center">
+  <h2>Add or Update Product</h2>
   <br>
-  <div align="center">
   <div class="container">
     <div style="width:600px;" align="left">
     <form role="form" class="form-horizontal" id="ProductController" action="ProductController" method="post">
@@ -54,9 +54,9 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="weight" class="col-xs-4 control-label">Weight:</label>
+            <label for="weight" class="col-xs-4 control-label">Weight in lbs:</label>
             <div class="col-xs-8">
-                <input type="number" class="form-control" id="weight" name="weight" value="<c:out value="${product.weight}" />" />
+                <input type="number" step="0.0001" class="form-control" id="weight" name="weight" value="<c:out value="${product.weight}" />" />
             </div>
         </div>
         <div class="form-group row">
@@ -112,6 +112,7 @@
             <label for="expiration" class="col-xs-4 control-label">Expiration:</label>
             <div class="col-xs-8">
                 <input type="text" class="form-control" id="expiration" name="expiration" value="<c:out value="${product.expiration}" />" />
+                <p>Click button to get expiration duration</p><a class="btn btn-primary" href="http://52.14.138.145:8080/foodexpirationservice/" role="button" target="_blank">Get Expiration</a>
             </div>
         </div>
         <div class="form-group row">

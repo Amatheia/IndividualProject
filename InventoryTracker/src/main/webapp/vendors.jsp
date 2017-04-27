@@ -3,13 +3,13 @@
 <%@include file="header.jsp"%>
 
 <div class="span6">
-    <h2 style="padding-left:30px;">Add Vendor</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
 </div>
-<br>
 <div align="center">
+    <h2>Add or Update Vendor</h2>
+    <br>
     <div class="container">
         <div style="width:600px;" align="left">
             <form role="form" class="form-horizontal" id="VendorController" action="VendorController" method="post">

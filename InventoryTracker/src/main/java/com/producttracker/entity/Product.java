@@ -42,7 +42,7 @@ public class Product {
     private int quantityOrdered;
 
     @Column(name = "weight")
-    private int weight;
+    private BigDecimal weight;
 
     @Column(name = "per_unit_cost")
     private BigDecimal perUnitCost;
@@ -77,7 +77,7 @@ public class Product {
     private String notes;
 
     @Column(name="active")
-    private byte active;
+    private boolean active;
 
     /**
      * Instantiates a new Product.
@@ -109,11 +109,11 @@ public class Product {
      */
     public Product(int productId, Date addDate, int categoryId,
                    int vendorId, String productName, int quantityOrdered,
-                int weight, BigDecimal perUnitCost, BigDecimal totalCost,
+                   BigDecimal weight, BigDecimal perUnitCost, BigDecimal totalCost,
                 LocalDate orderDate, LocalDate dateReceived,
                 Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
                 BigDecimal currentValue, String expiration,
-                String notes, byte active) {
+                String notes, boolean active) {
         this.productId = productId;
         this.addDate = addDate;
         this.categoryId = categoryId;
@@ -238,7 +238,7 @@ public class Product {
      *
      * @return the weight
      */
-    public int getWeight() {
+    public BigDecimal getWeight() {
         return weight;
     }
 
@@ -247,7 +247,7 @@ public class Product {
      *
      * @param weight the weight
      */
-    public void setWeight(int weight) {
+    public void setWeight(BigDecimal weight) {
         this.weight = weight;
     }
 
@@ -436,7 +436,7 @@ public class Product {
      *
      * @return the active
      */
-    public byte getActive() {
+    public boolean getActive() {
         return active;
     }
 
@@ -445,7 +445,7 @@ public class Product {
      *
      * @param active the active
      */
-    public void setActive(byte active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 

@@ -11,10 +11,12 @@
 </script>
 
 <div class="span6">
-    <h2 style="padding-left:30px;">Inventory Count</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
+</div>
+<div align="center">
+  <h2>Inventory Count</h2>
 </div>
 <br>
 <div align="center">

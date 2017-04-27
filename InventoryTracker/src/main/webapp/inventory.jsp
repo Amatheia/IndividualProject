@@ -2,9 +2,7 @@
 <c:set var="title" value="Product Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
-<%@page import="java.util.List"%>
-<%@page import="com.producttracker.entity.Product"%>
-<%@page import="com.producttracker.persistence.ProductDao"%>
+<jsp:useBean id="products" class="com.producttracker.persistence.ProductDao"/>
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
@@ -13,11 +11,14 @@
 </script>
 
 <div class="span6">
-  <h2 style="padding-left:30px;">Inventory</h2>
   <br>
   <c:import url="navmenu.jsp" />
   <br>
-  <br>
+</div>
+<div align="center">
+  <h2>Inventory</h2>
+</div>
+<br>
   <div class="container-fluid">
     <table id="productTable" class="display" cellspacing="0" width="100%">
       <thead>
@@ -28,7 +29,7 @@
         <th>Vendor</th>
         <th>Product Name</th>
         <th>Quantity Ordered</th>
-        <th>Weight</th>
+        <th>Weight in lbs</th>
         <th>Per Unit Cost</th>
         <th>Total Cost</th>
         <th>Order Date</th>
@@ -39,37 +40,35 @@
         <th>Current Value</th>
         <th>Expiration Date</th>
         <th>Notes</th>
+        <th>Active</th>
         <th>Action</th>
       </tr>
       </thead>
       <tbody>
-      <%
-        ProductDao productlist = new ProductDao();
-        List<Product> list = productlist.getAllProducts();
-        for (Product p : list) {
-      %>
+      <c:forEach items="${products.getAllProducts()}" var="product">
       <tr>
-        <td><%=p.getProductId()%></td>
-        <td><%=p.getAddDate()%></td>
-        <td><%=p.getCategoryId()%></td>
-        <td><%=p.getVendorId()%></td>
-        <td><%=p.getProductName()%></td>
-        <td><%=p.getQuantityOrdered()%></td>
-        <td><%=p.getWeight()%></td>
-        <td><%=p.getPerUnitCost()%></td>
-        <td><%=p.getTotalCost()%></td>
-        <td><%=p.getOrderDate()%></td>
-        <td><%=p.getDateReceived()%></td>
-        <td><%=p.getQuantityReceived()%></td>
-        <td><%=p.getPaidNotReceived()%></td>
-        <td><%=p.getCurrentQuantity()%></td>
-        <td><%=p.getCurrentValue()%></td>
-        <td><%=p.getExpiration()%></td>
-        <td><%=p.getNotes()%></td>
-        <td><a href="ProductController?action=edit&productId=<%= p.getProductId() %>">Update</a></td>
-        <td><a href="ProductController?action=delete&productId=<%= p.getProductId() %>">Delete</a></td>
+        <td><c:out value="${product.productId}" /></td>
+        <td><c:out value="${product.addDate}" /></td>
+        <td><c:out value="${product.categoryId}" /></td>
+        <td><c:out value="${product.vendorId}" /></td>
+        <td><c:out value="${product.productName}" /></td>
+        <td><c:out value="${product.quantityOrdered}" /></td>
+        <td><c:out value="${product.weight}" /></td>
+        <td><c:out value="${product.perUnitCost}" /></td>
+        <td><c:out value="${product.totalCost}" /></td>
+        <td><c:out value="${product.orderDate}" /></td>
+        <td><c:out value="${product.dateReceived}" /></td>
+        <td><c:out value="${product.quantityReceived}" /></td>
+        <td><c:out value="${product.paidNotReceived}" /></td>
+        <td><c:out value="${product.currentQuantity}" /></td>
+        <td><c:out value="${product.currentValue}" /></td>
+        <td><c:out value="${product.expiration}" /></td>
+        <td><c:out value="${product.notes}" /></td>
+        <td><c:out value="${product.active}" /></td>
+        <td><a href="ProductController?action=edit&productId=<c:out value="${product.productId}"/>">Update</a></td>
+        <td><a href="ProductController?action=delete&productId=<c:out value="${product.productId}"/>">Delete</a></td>
       </tr>
-      <%}%>
+      </c:forEach>
       </tbody>
     </table>
   </div>

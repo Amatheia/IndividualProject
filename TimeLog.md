@@ -34,3 +34,6 @@
 | 04/05/17| Multithreader exercise | 2 | |
 | 04/19/17| Individual Project, Presentation feedback | 3 | |
 | 04/20/17| Individual Project | 6 | |
+| 04/21/17| Message Bean exercise | 3 | |
+| 04/25/17| Presentation 2 | 5 | |
+| 04/26/17| Individual Project, Presentation feedback, Code Review 3 | 8 | |

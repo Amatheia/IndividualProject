@@ -3,10 +3,12 @@
 <%@include file="header.jsp"%>
 
   <div class="span6">
-    <h2 style="padding-left:30px;">User Home Page</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
+    <div align="center">
+      <h2>User Home Page</h2>
+    </div>
     <div ng-app = "" ng-init = """>
       <p>Enter your Name: <input type = "text" ng-model = "name"></p>
       <p>Hello <span ng-bind = "name"></span>!</p>

@@ -82,7 +82,19 @@ public class ProductController extends HttpServlet {
         }
         product.setProductName(request.getParameter("productName"));
         product.setQuantityOrdered(Integer.parseInt(request.getParameter("quantityOrdered")));
-        product.setWeight(Integer.parseInt(request.getParameter("weight")));
+        try {
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+            symbols.setGroupingSeparator(',');
+            symbols.setDecimalSeparator('.');
+            String pattern = "#,####.0000";
+            DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+            decimalFormat.setParseBigDecimal(true);
+            // parse the string
+            BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("weight"));
+            product.setWeight(bigDecimal);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         try {
             DecimalFormatSymbols symbols = new DecimalFormatSymbols();
             symbols.setGroupingSeparator(',');
@@ -144,6 +156,8 @@ public class ProductController extends HttpServlet {
         }
         product.setExpiration(request.getParameter("expiration"));
         product.setNotes(request.getParameter("notes"));
+        boolean checkbox = request.getParameter( "active" ) != null;
+        product.setActive(checkbox);
         String productid = request.getParameter("productId");
         if(productid == null || productid.isEmpty())
         {

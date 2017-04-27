@@ -54,7 +54,7 @@ create table products (
   `vendor_id` int(12) NOT NULL,
   `product_name` varchar(30) NOT NULL,
   `quantity_ordered` int NOT NULL,
-  `weight` int NOT NULL,
+  `weight` numeric(5,4) NOT NULL,
   `per_unit_cost` numeric(15,2) NOT NULL,
   `total_cost` numeric(15,2),
   `order_date` datetime,

@@ -3,6 +3,10 @@
 <%@include file="header.jsp"%>
 
 <body>
-<h2>A general error has occurred.</h2>
+<c:import url="navmenu.jsp" />
+<br>
+  <div align="center">
+    <h2>A general error has occurred.</h2>
+  </div>
 </body>
 </html>

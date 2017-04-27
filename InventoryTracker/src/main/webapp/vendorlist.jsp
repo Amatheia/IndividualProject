@@ -11,13 +11,15 @@
 </script>
 
 <div class="span6">
-    <h2 style="padding-left:30px;">Vendors</h2>
     <br>
     <c:import url="navmenu.jsp" />
     <br>
 </div>
+<div align="center">
+    <h2>Vendors</h2>
+</div>
+<br>
 <div class="container-fluid">
-    <h2>Vendors: </h2>
     <table id="vendorTable" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>
