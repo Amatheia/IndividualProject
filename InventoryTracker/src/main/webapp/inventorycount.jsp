@@ -16,7 +16,7 @@
     <br>
 </div>
 <div align="center">
-  <h2>Inventory Count</h2>
+  <h2>Inventory Count ***UNDER CONSTRUCTION***</h2>
 </div>
 <br>
 <div align="center">

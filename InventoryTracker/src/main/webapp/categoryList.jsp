@@ -1,5 +1,5 @@
 <%@include file="taglib.jsp"%>
-<c:set var="title" value="Search Results" />
+<c:set var="title" value="Category Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
 <jsp:useBean id="categories" class="com.producttracker.persistence.CategoryDao"/>
@@ -26,7 +26,8 @@
             <th>Category Id</th>
             <th>Category Name</th>
             <th>Description</th>
-            <th>Action</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -35,8 +36,8 @@
                 <td><c:out value="${category.categoryId}" /></td>
                 <td><c:out value="${category.categoryName}" /></td>
                 <td><c:out value="${category.description}" /></td>
-                <td><a href="CategoryController?action=edit&categoryId=<c:out value="${category.categoryId}"/>">Update</a></td>
-                <td><a href="CategoryController?action=delete&categoryId=<c:out value="${category.categoryId}"/>">Delete</a></td>
+                <td><a href="CategoryController?action=edit&categoryId=<c:out value="${category.categoryId}"/>"><span class='glyphicon glyphicon-pencil'></span></a></td>
+                <td><a href="CategoryController?action=delete&categoryId=<c:out value="${category.categoryId}"/>"><span class='glyphicon glyphicon-trash'></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

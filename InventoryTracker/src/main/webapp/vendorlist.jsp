@@ -1,5 +1,5 @@
 <%@include file="taglib.jsp"%>
-<c:set var="title" value="Search Results" />
+<c:set var="title" value="Vendor Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
 <jsp:useBean id="vendors" class="com.producttracker.persistence.VendorDao"/>
@@ -31,7 +31,8 @@
             <th>State or Province</th>
             <th>Postal Code</th>
             <th>Phone</th>
-            <th>Action</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -45,8 +46,8 @@
                 <td><c:out value="${vendor.stateProvince}" /></td>
                 <td><c:out value="${vendor.postalCode}" /></td>
                 <td><c:out value="${vendor.phone}" /></td>
-                <td><a href="VendorController?action=edit&vendorId=<c:out value="${vendor.vendorId}"/>">Update</a></td>
-                <td><a href="VendorController?action=delete&vendorId=<c:out value="${vendor.vendorId}"/>">Delete</a></td>
+                <td><a href="VendorController?action=edit&vendorId=<c:out value="${vendor.vendorId}"/>"><span class='glyphicon glyphicon-pencil'></span></a></td>
+                <td><a href="VendorController?action=delete&vendorId=<c:out value="${vendor.vendorId}"/>"><span class='glyphicon glyphicon-trash'></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

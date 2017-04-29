@@ -113,7 +113,7 @@
             <label for="expiration" class="col-xs-4 control-label">Expiration:</label>
             <div class="col-xs-8">
                 <input type="text" class="form-control" id="expiration" name="expiration" value="<c:out value="${product.expiration}" />" />
-                <p>Click button to get expiration</p><a class="btn btn-primary" href="http://52.14.138.145:8080/foodexpirationservice/" role="button" target="_blank">Get Expiration</a>
+                <p>Click button to get expiration</p><a class="btn btn-primary" href="/inventorytracker/expirationService.jsp" role="button" target="_blank">Get Expiration</a>
             </div>
         </div>
         <div class="form-group row">

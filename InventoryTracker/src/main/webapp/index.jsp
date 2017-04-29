@@ -7,7 +7,7 @@
     <c:import url="navmenu.jsp" />
     <br>
     <div align="center">
-      <h2>User Home Page</h2>
+      <h2>User Home Page ***UNDER CONSTRUCTION***</h2>
     </div>
     <div ng-app = "" ng-init = """>
       <p>Enter your Name: <input type = "text" ng-model = "name"></p>

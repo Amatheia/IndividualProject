@@ -1,5 +1,5 @@
 <%@include file="taglib.jsp"%>
-<c:set var="title" value="Search Results" />
+<c:set var="title" value="User Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
 <jsp:useBean id="users" class="com.producttracker.persistence.UserDao"/>
@@ -29,7 +29,8 @@
             <th>Last Name</th>
             <th>Username</th>
             <th>Date Added</th>
-            <th>Action</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -41,8 +42,8 @@
                     <td><c:out value="${user.lastName}" /></td>
                     <td><c:out value="${user.username}" /></td>
                     <td><c:out value="${user.dateAdded}" /></td>
-                    <td><a href="UserController?action=edit&userid=<c:out value="${user.userid}"/>">Update</a></td>
-                    <td><a href="UserController?action=delete&userid=<c:out value="${user.userid}"/>">Delete</a></td>
+                    <td><a href="UserController?action=edit&userid=<c:out value="${user.userid}"/>"><span class='glyphicon glyphicon-pencil'></span></a></td>
+                    <td><a href="UserController?action=delete&userid=<c:out value="${user.userid}"/>"><span class='glyphicon glyphicon-trash'></span></a></td>
                 </tr>
             </c:forEach>
         </tbody>

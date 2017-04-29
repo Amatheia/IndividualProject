@@ -41,7 +41,8 @@
         <th>Expiration Date</th>
         <th>Notes</th>
         <th>Active</th>
-        <th>Action</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
       </thead>
       <tbody>
@@ -65,8 +66,8 @@
         <td><c:out value="${product.expiration}" /></td>
         <td><c:out value="${product.notes}" /></td>
         <td><c:out value="${product.active}" /></td>
-        <td><a href="ProductController?action=edit&productId=<c:out value="${product.productId}"/>">Update</a></td>
-        <td><a href="ProductController?action=delete&productId=<c:out value="${product.productId}"/>">Delete</a></td>
+        <td><a href="ProductController?action=edit&productId=<c:out value="${product.productId}"/>"><span class='glyphicon glyphicon-pencil'></span></a></td>
+        <td><a href="ProductController?action=delete&productId=<c:out value="${product.productId}"/>"><span class='glyphicon glyphicon-trash'></span></a></td>
       </tr>
       </c:forEach>
       </tbody>
