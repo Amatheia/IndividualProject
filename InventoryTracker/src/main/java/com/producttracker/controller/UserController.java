@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -61,7 +62,7 @@ public class UserController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         log.info("In the doPost()");
-
+        HttpSession session = request.getSession(true);
         User user = new User();
         user.setRole(request.getParameter("role"));
         user.setFirstName(request.getParameter("firstName"));

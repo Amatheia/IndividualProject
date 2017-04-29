@@ -1,8 +1,11 @@
 package com.producttracker.entity;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -14,17 +17,13 @@ import java.util.Set;
 @Entity (name = "categories")
 public class Category {
 
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
-    @Column(name="category_id")
     private int categoryId;
 
-    @Column(name = "category_name", unique = true)
     private String categoryName;
 
-    @Column(name="description")
     private String description;
+
+    private Set<Product> products = new HashSet<Product>(0);
 
     /**
      * Instantiates a new Category.
@@ -50,6 +49,10 @@ public class Category {
      *
      * @return the categoryId
      */
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    @Column(name="category_id")
     public int getCategoryId() {
         return categoryId;
     }
@@ -68,6 +71,7 @@ public class Category {
      *
      * @return the categoryName
      */
+    @Column(name = "category_name", unique = true)
     public String getCategoryName() {
         return categoryName;
     }
@@ -86,6 +90,7 @@ public class Category {
      *
      * @return the description
      */
+    @Column(name="description")
     public String getDescription() {
         return description;
     }
@@ -97,6 +102,16 @@ public class Category {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.DELETE})
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 
     @Override

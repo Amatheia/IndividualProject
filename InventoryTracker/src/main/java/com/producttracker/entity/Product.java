@@ -5,9 +5,10 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Date;
 
 /**
  * A class to represent a product.
@@ -29,11 +30,13 @@ public class Product {
     @Column(name="add_date", insertable=false, updatable=false)
     private Date addDate;
 
-    @Column(name = "category_id")
-    private int categoryId;
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false, insertable = true, updatable = true)
+    private Category category;
 
-    @Column(name = "vendor_id")
-    private int vendorId;
+    @ManyToOne
+    @JoinColumn(name = "vendor_id", nullable = false, insertable = true, updatable = true)
+    private Vendor vendor;
 
     @Column(name="product_name")
     private String productName;
@@ -90,8 +93,8 @@ public class Product {
      *
      * @param productId     the product id
      * @param addDate   the addDate
-     * @param categoryId   the category id
-     * @param vendorId    the vendor id
+     * @param category   the category id
+     * @param vendor    the vendor id
      * @param productName    the product name
      * @param quantityOrdered    the quantityOrdered
      * @param weight    the weight
@@ -107,17 +110,17 @@ public class Product {
      * @param notes  the notes
      * @param active  active
      */
-    public Product(int productId, Date addDate, int categoryId,
-                   int vendorId, String productName, int quantityOrdered,
+    public Product(int productId, Date addDate, Category category,
+                   Vendor vendor, String productName, int quantityOrdered,
                    BigDecimal weight, BigDecimal perUnitCost, BigDecimal totalCost,
-                LocalDate orderDate, LocalDate dateReceived,
-                Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
-                BigDecimal currentValue, String expiration,
-                String notes, boolean active) {
+                   LocalDate orderDate, LocalDate dateReceived,
+                   Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
+                   BigDecimal currentValue, String expiration,
+                   String notes, boolean active) {
         this.productId = productId;
         this.addDate = addDate;
-        this.categoryId = categoryId;
-        this.vendorId = vendorId;
+        this.category = category;
+        this.vendor = vendor;
         this.productName = productName;
         this.quantityOrdered = quantityOrdered;
         this.weight = weight;
@@ -133,6 +136,7 @@ public class Product {
         this.notes = notes;
         this.active = active;
     }
+
 
     /**
      * Gets productId.
@@ -161,40 +165,20 @@ public class Product {
         return addDate;
     }
 
-    /**
-     * Gets category id.
-     *
-     * @return the category id
-     */
-    public int getCategoryId() {
-        return categoryId;
+    public Category getCategory() {
+        return this.category;
     }
 
-    /**
-     * Sets category id.
-     *
-     * @param categoryId the category id
-     */
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    /**
-     * Gets vendor id.
-     *
-     * @return the vendor id
-     */
-    public int getVendorId() {
-        return vendorId;
+    public Vendor getVendor() {
+        return this.vendor;
     }
 
-    /**
-     * Sets vendor id.
-     *
-     * @param vendorId the vendor id
-     */
-    public void setVendorId(int vendorId) {
-        this.vendorId = vendorId;
+    public void setVendor(Vendor vendor) {
+        this.vendor = vendor;
     }
 
     /**
@@ -448,5 +432,6 @@ public class Product {
     public void setActive(boolean active) {
         this.active = active;
     }
+
 
 }

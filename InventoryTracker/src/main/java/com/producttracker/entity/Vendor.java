@@ -1,8 +1,10 @@
 package com.producttracker.entity;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -41,14 +43,18 @@ public class Vendor {
     @Column(name="phone")
     private String phone;
 
+    @OneToMany(mappedBy = "vendor", fetch = FetchType.LAZY)
+    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.DELETE})
+    List<Product> products;
+
     /**
-     * Instantiates a new Category.
+     * Instantiates a new Vendor.
      */
     public Vendor() {
     }
 
     /**
-     * Instantiates a new Product.
+     * Instantiates a new Vendor.
      *
      * @param vendorId  the vendor id
      * @param vendorName   the vendor name
@@ -214,6 +220,28 @@ public class Vendor {
      */
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "vendorId=" + vendorId +
+                ", vendorName=" + vendorName +
+                ", contactName=" + contactName +
+                ", address=" + address +
+                ", city=" + city +
+                ", stateProvince=" + stateProvince +
+                ", postalCode=" + postalCode +
+                ", phone=" + phone +
+                '}';
     }
 
 }

@@ -17,14 +17,13 @@ import java.util.List;
 public class CategoryDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
-    List<Category> categoriesList;
 
     /** Return a list of all categories
      *
      * @return All categories
      */
     public List<Category> getAllCategories() {
-        List<Category> categories = new ArrayList<Category>();
+        List<Category> categories = null;
         Session session = null;
         try {
             session = openSession();
@@ -67,7 +66,7 @@ public class CategoryDao {
      * @return Category
      */
     public List<Category> getCategoriesList(String categoryName) {
-        categoriesList = new ArrayList<Category>();
+        List<Category> categoriesList = new ArrayList<Category>();
         Session session = null;
         try {
             session = openSession();

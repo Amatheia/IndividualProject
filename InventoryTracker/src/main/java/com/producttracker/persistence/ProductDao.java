@@ -2,10 +2,10 @@ package com.producttracker.persistence;
 
 import com.producttracker.entity.Product;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class ProductDao {
      * @return All products
      */
     public List<Product> getAllProducts() {
-        List<Product> products = new ArrayList<Product>();
+        List<Product> products = null;
         Session session = null;
         try {
             session = openSession();
@@ -143,6 +143,7 @@ public class ProductDao {
      * Update the product
      * @param product
      */
+
     public void updateProduct(Product product) {
         Session session = null;
         try {

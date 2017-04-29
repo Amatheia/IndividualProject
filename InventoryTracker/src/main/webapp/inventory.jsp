@@ -49,8 +49,8 @@
       <tr>
         <td><c:out value="${product.productId}" /></td>
         <td><c:out value="${product.addDate}" /></td>
-        <td><c:out value="${product.categoryId}" /></td>
-        <td><c:out value="${product.vendorId}" /></td>
+        <td><c:out value="${product.category.categoryName}" /></td>
+        <td><c:out value="${product.vendor.vendorName}" /></td>
         <td><c:out value="${product.productName}" /></td>
         <td><c:out value="${product.quantityOrdered}" /></td>
         <td><c:out value="${product.weight}" /></td>

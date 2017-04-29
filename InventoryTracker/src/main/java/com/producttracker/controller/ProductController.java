@@ -1,7 +1,11 @@
 package com.producttracker.controller;
 
+import com.producttracker.entity.Category;
 import com.producttracker.entity.Product;
+import com.producttracker.entity.Vendor;
+import com.producttracker.persistence.CategoryDao;
 import com.producttracker.persistence.ProductDao;
+import com.producttracker.persistence.VendorDao;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -68,16 +72,23 @@ public class ProductController extends HttpServlet {
         log.info("In the doPost()");
 
         Product product = new Product();
+
+        CategoryDao cat = new CategoryDao();
         try {
-            product.setCategoryId(Integer.parseInt(request.getParameter("category1")));
+            Category catId = cat.getCategory(Integer.parseInt(request.getParameter("category1")));
+            product.setCategory(catId);
         }catch(NumberFormatException ex){
             log.error("NumberFormatException" + ex);
         }
+
+        VendorDao v = new VendorDao();
         try {
-            product.setVendorId(Integer.parseInt(request.getParameter("vendor1")));
+            Vendor vid = v.getVendor(Integer.parseInt(request.getParameter("vendor1")));
+            product.setVendor(vid);
         }catch(NumberFormatException ex){
             log.error("NumberFormatException" + ex);
         }
+
         product.setProductName(request.getParameter("productName"));
         product.setQuantityOrdered(Integer.parseInt(request.getParameter("quantityOrdered")));
         try {
