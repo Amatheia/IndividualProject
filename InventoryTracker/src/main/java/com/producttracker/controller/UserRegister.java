@@ -6,18 +6,19 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.IOException;
 
 /**
  * Created by amatheia.
  */
+@WebServlet("/register")
 public class UserRegister extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
-    private static String RETURN_TO_LOGIN = "/login.jsp";
     private UserDao dao;
 
     public UserRegister() {
@@ -25,12 +26,7 @@ public class UserRegister extends HttpServlet {
         dao = new UserDao();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        log.info("In the doGet()");
-
-
-    }
-
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("In the doPost()");
 
@@ -46,9 +42,8 @@ public class UserRegister extends HttpServlet {
             dao.addUser(user);
         }
 
-        RequestDispatcher view = request.getRequestDispatcher(RETURN_TO_LOGIN);
-        request.setAttribute("users", dao.getAllUsers());
-        view.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+        dispatcher.forward(request, response);
 
         log.info("Added user: " + request.getParameter("firstName"));
     }

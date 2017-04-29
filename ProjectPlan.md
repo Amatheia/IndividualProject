@@ -68,25 +68,30 @@
 - [X] Time log entries
 
 ### Week 13
-- [ ] Time log entries
-- [ ] Simplify design as needed
-- [ ] Integration with Team Project web service
-- [ ] Add jQuery
-- [ ] add tests
-- [ ] Fix design, code, etc.
+- [X] Time log entries
+- [X] Simplify design as needed
+- [X] jQuery
+- [X] error handling
+- [X] Fix design, code, etc.
 
 ### Week 14
 - [ ] Time log entries
-- [ ] jQuery, fix code as needed
+- [ ] jQuery
+- [ ] data validation
 - [ ] add tests
+- [ ] Integration with Team Project web service
+- [ ] Fix design, code, etc.
 - [ ] Create final presentation
 
 ### Week 15
 - [ ] Final Presentation
+- [ ] add tests
+- [ ] clean up code
 - [ ] Time log entries
 
 ### Week 16
 - [ ] Time log entries
+- [ ] Final Project Due
 
 
 

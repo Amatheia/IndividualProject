@@ -61,7 +61,7 @@
     </column>
     <column id="23" parent="11" name="weight">
       <Position>7</Position>
-      <DataType>decimal(5,4)|0</DataType>
+      <DataType>decimal(15,4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="24" parent="11" name="per_unit_cost">

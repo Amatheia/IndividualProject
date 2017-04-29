@@ -1,7 +1,6 @@
 package com.producttracker.controller;
 
 import com.producttracker.entity.Product;
-import com.producttracker.persistence.CategoryDao;
 import com.producttracker.persistence.ProductDao;
 import org.apache.log4j.Logger;
 
@@ -30,7 +29,6 @@ public class ProductController extends HttpServlet {
     private static String INSERT_OR_EDIT = "/products.jsp";
     private static String LIST_PRODUCT = "/inventory.jsp";
     private ProductDao dao;
-    private CategoryDao daoCat;
 
     public ProductController() {
         super();
@@ -73,12 +71,12 @@ public class ProductController extends HttpServlet {
         try {
             product.setCategoryId(Integer.parseInt(request.getParameter("category1")));
         }catch(NumberFormatException ex){
-            ex.printStackTrace();
+            log.error("NumberFormatException" + ex);
         }
         try {
             product.setVendorId(Integer.parseInt(request.getParameter("vendor1")));
         }catch(NumberFormatException ex){
-            ex.printStackTrace();
+            log.error("NumberFormatException" + ex);
         }
         product.setProductName(request.getParameter("productName"));
         product.setQuantityOrdered(Integer.parseInt(request.getParameter("quantityOrdered")));
@@ -93,7 +91,7 @@ public class ProductController extends HttpServlet {
             BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("weight"));
             product.setWeight(bigDecimal);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception" + e);
         }
         try {
             DecimalFormatSymbols symbols = new DecimalFormatSymbols();
@@ -106,38 +104,54 @@ public class ProductController extends HttpServlet {
             BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("perUnitCost"));
             product.setPerUnitCost(bigDecimal);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception" + e);
+        }
+        try {
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+            symbols.setGroupingSeparator(',');
+            symbols.setDecimalSeparator('.');
+            String pattern = "#,####.00";
+            DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+            decimalFormat.setParseBigDecimal(true);
+            // parse the string
+            BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("totalCost"));
+            product.setTotalCost(bigDecimal);
+        } catch (Exception e) {
+            log.error("Exception" + e);
         }
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate orderDate = LocalDate.parse(request.getParameter("orderDate"), formatter);
             product.setOrderDate(orderDate);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception" + e);
         }
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate dateReceived = LocalDate.parse(request.getParameter("dateReceived"), formatter);
             product.setDateReceived(dateReceived);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception" + e);
         }
 
         try {
             product.setQuantityReceived(Integer.parseInt(request.getParameter("quantityReceived")));
         } catch (NumberFormatException e) {
+            log.info("NumberFormatException" + e + "null");
             product.setQuantityReceived(null);
         }
 
         try {
             product.setPaidNotReceived(Integer.parseInt(request.getParameter("paidNotReceived")));
         } catch (NumberFormatException e) {
+            log.info("NumberFormatException" + e + "null");
             product.setPaidNotReceived(null);
         }
 
         try {
             product.setCurrentQuantity(Integer.parseInt(request.getParameter("currentQuantity")));
         } catch (NumberFormatException e) {
+            log.info("NumberFormatException" + e + "null");
             product.setCurrentQuantity(null);
         }
 
@@ -152,7 +166,7 @@ public class ProductController extends HttpServlet {
             BigDecimal bigDecimal = (BigDecimal) decimalFormat.parse(request.getParameter("currentValue"));
             product.setCurrentValue(bigDecimal);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Exception" + e);
         }
         product.setExpiration(request.getParameter("expiration"));
         product.setNotes(request.getParameter("notes"));
