@@ -25,8 +25,6 @@
    <p>Copyright Amatheia 2017. All rights reserved.</p><br/>
   </div>
 
-<!-- javascript at the bottom for fast page loading -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
 
 </body>
 </html>

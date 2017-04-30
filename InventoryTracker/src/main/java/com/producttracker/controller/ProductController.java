@@ -194,6 +194,7 @@ public class ProductController extends HttpServlet {
             dao.updateProduct(product);
         }
         RequestDispatcher view = request.getRequestDispatcher(LIST_PRODUCT);
+        request.setAttribute("selectedCategory", request.getParameter("category1"));
         request.setAttribute("products", dao.getAllProducts());
         view.forward(request, response);
 

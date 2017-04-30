@@ -10,11 +10,8 @@
     } );
 </script>
 
-<div class="span6">
-    <br>
-    <c:import url="navmenu.jsp" />
-    <br>
-</div>
+<c:import url="navmenu.jsp" />
+
 <div align="center">
     <h2>Vendors</h2>
 </div>

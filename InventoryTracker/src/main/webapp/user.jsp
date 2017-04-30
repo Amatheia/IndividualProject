@@ -1,12 +1,10 @@
 <%@include file="taglib.jsp"%>
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
+<script src="scripts/userForm.js" type="text/javascript"></script>
 
-<div class="span6">
-    <br>
-    <c:import url="navmenu.jsp" />
-    <br>
-</div>
+<c:import url="navmenu.jsp" />
+
 <div align="center">
     <h2>Add or Update User</h2>
     <br>
@@ -16,7 +14,7 @@
                 <div class="form-group row">
                     <label for="id" class="col-xs-4 control-label">User Id:</label>
                     <div class="col-xs-8">
-                        <input type="text" id="id" readonly="readonly" name="userid"
+                        <input type="text" id="id" readonly="readonly" name="userid" placeholder="Auto Generated"
                                value="<c:out value="${user.userid}" />" />
                     </div>
                 </div>

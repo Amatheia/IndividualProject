@@ -39,3 +39,4 @@
 | 04/26/17| Individual Project, Presentation feedback, Code Review 3 | 8 | |
 | 04/27/17| Individual Project | 3 | |
 | 04/28/17| Individual Project | 9 | |
+| 04/29/17| Individual Project | 8 | |

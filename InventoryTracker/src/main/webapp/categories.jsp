@@ -2,11 +2,8 @@
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
 
-<div class="span6">
-    <br>
-    <c:import url="navmenu.jsp" />
-    <br>
-</div>
+<c:import url="navmenu.jsp" />
+
 <div align="center">
     <h2>Add or Update Category</h2>
     <br>
@@ -16,7 +13,7 @@
                 <div class="form-group row">
                     <label for="id" class="col-xs-4 control-label">Category Id:</label>
                     <div class="col-xs-8">
-                        <input type="text" id="id" readonly="readonly" name="categoryId" value="<c:out value="${category.categoryId}" />" />
+                        <input type="text" id="id" readonly="readonly" name="categoryId" placeholder="Auto Generated" value="<c:out value="${category.categoryId}" />" />
                     </div>
                 </div>
                 <div class="form-group row">

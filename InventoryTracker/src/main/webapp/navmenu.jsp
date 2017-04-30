@@ -1,7 +1,12 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -9,7 +14,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.jsp">Home</a></li>
+              <li><a href="index.jsp">Home</a></li>
               <li><a href="inventorycount.jsp">Inventory Count</a></li>
               <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -47,6 +52,7 @@
                       <li><a href="user.jsp">Add User</a></li>
                   </ul>
               </li>
+              <li><a href="contact.jsp">Contact</a></li>
             </ul>
         </div>
     </div>

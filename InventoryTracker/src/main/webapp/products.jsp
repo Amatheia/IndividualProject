@@ -3,14 +3,13 @@
 <%@include file="header.jsp"%>
 <jsp:useBean id="categories" class="com.producttracker.persistence.CategoryDao"/>
 <jsp:useBean id="vendors" class="com.producttracker.persistence.VendorDao"/>
+<script src="scripts/productsForm.js" type="text/javascript"></script>
 <script src="scripts/calendar.js" type="text/javascript"></script>
 <script src="scripts/totalCost.js" type="text/javascript"></script>
 <script src="scripts/currentValue.js" type="text/javascript"></script>
-<div class="span6">
-    <br>
-    <c:import url="navmenu.jsp" />
-    <br>
-</div>
+
+<c:import url="navmenu.jsp" />
+
 <div align="center">
   <h2>Add or Update Product</h2>
   <br>
@@ -20,7 +19,7 @@
         <div class="form-group row">
             <label for="id" class="col-xs-4 control-label">Product Id:</label>
             <div class="col-xs-8">
-                <input type="text" id="id" readonly="readonly" name="productId" value="<c:out value="${product.productId}" />" />
+                <input type="text" id="id" readonly="readonly" name="productId" placeholder="Auto Generated" value="<c:out value="${product.productId}" />" />
             </div>
         </div>
         <div class="form-group row">
@@ -123,7 +122,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-10">
+            <div class="col-xs-8">
                 <div class="form-check" id="userOptions">
                      <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" id="active" name="active"

@@ -2,57 +2,39 @@
 <c:set var="title" value="Search Results" />
 <%@include file="headTag.jsp"%>
 <%@include file="header.jsp"%>
-<jsp:useBean id="categories" class="com.producttracker.persistence.CategoryDao"/>
+<jsp:useBean id="products" class="com.producttracker.persistence.ProductDao"/>
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
-        $('#categoryTable').DataTable();
+        $('#inventoryTable').DataTable();
     } );
 </script>
 
-<div class="span6">
-    <br>
-    <c:import url="navmenu.jsp" />
-    <br>
-</div>
+<c:import url="navmenu.jsp" />
+
 <div align="center">
-  <h2>Inventory Count ***UNDER CONSTRUCTION***</h2>
+  <h2>Inventory Count</h2>
 </div>
 <br>
-<div align="center">
-    <div class="container">
-        <div style="width:600px;" align="left">
-            <form role="form" class="form-horizontal" id="InventoryCount" action="InventoryCount" method="post">
-                <div class="form-group row">
-                    <label for="category1" class="col-xs-4 control-label">Display Products by Category:</label>
-                    <div class="col-xs-8">
-                        <select class="form-control" id="category1" name="category1">
-                            <c:forEach items="${categories.getAllCategories()}" var="category">
-                                <option value='<c:out value="${category.categoryId}"/>'><c:out value="${category.categoryName}"/></option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
-                <br>
-                <div align="center">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-xs-2">
-                              Product
-                          </div>
-                          <div class="col-xs-2">
-                              Quantity
-                          </div>
-                      </div>
-                  </div>
-                </div>
-                <br>
-                <div align="center">
-                    <button type="submit" class="btn btn-primary">Update Products</button>
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="container-fluid">
+    <table id="inventoryTable" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Product</th>
+            <th>Current Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${products.getAllProducts()}" var="product">
+        <tr>
+        <td><c:out value="${product.category.categoryName}" /></td>
+        <td><c:out value="${product.productName}" /></td>
+        <td><c:out value="${product.currentValue}" /></td>
+        </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </div>
 <br>
 <br>

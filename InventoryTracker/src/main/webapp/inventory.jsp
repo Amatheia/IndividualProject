@@ -10,11 +10,8 @@
     } );
 </script>
 
-<div class="span6">
-  <br>
-  <c:import url="navmenu.jsp" />
-  <br>
-</div>
+<c:import url="navmenu.jsp" />
+
 <div align="center">
   <h2>Inventory</h2>
 </div>
@@ -73,5 +70,6 @@
       </tbody>
     </table>
   </div>
-  <br>
-  <c:import url="footer.jsp" />
+<br>
+<br>
+<c:import url="footer.jsp" />

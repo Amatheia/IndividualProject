@@ -1,10 +1,14 @@
 /**
- * jQuery form validation for user registration.
+ * jQuery form validation for user form.
  */
 $(document).ready(function () {
 
-    $('#userRegister').validate({
+    $('#UserController').validate({
         rules: {
+            role: {
+                required: true,
+                lettersonly: true
+            },
             firstname: {
                 required: true,
                 lettersonly: true,
@@ -21,12 +25,6 @@ $(document).ready(function () {
             },
             password: {
                 required: true,
-                minlength: 6,
-                maxlength: 12
-            },
-            confirmPassword: {
-                required: true,
-                equalTo: "#password",
                 minlength: 6,
                 maxlength: 12
             }
