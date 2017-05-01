@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
               <li><a href="index.jsp">Home</a></li>
-              <li><a href="inventorycount.jsp">Inventory Count</a></li>
+              <li><a href="updateInventory.jsp">Inventory Count</a></li>
               <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                       Inventory <span class="caret"></span>

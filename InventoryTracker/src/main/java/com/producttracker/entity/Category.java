@@ -1,5 +1,6 @@
 package com.producttracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -22,8 +23,6 @@ public class Category {
     private String categoryName;
 
     private String description;
-
-    private Set<Product> products = new HashSet<Product>(0);
 
     /**
      * Instantiates a new Category.
@@ -102,16 +101,6 @@ public class Category {
      */
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.DELETE})
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
     }
 
     @Override

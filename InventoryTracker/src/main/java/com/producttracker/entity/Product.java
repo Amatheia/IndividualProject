@@ -1,11 +1,11 @@
 package com.producttracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.producttracker.util.LocalDateAttributeConverter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
@@ -79,6 +79,7 @@ public class Product {
     @Column(name="notes")
     private String notes;
 
+    @JsonIgnore
     @Column(name="active")
     private boolean active;
 
@@ -108,7 +109,7 @@ public class Product {
      * @param currentValue  the currentValue
      * @param expiration  the expiration
      * @param notes  the notes
-     * @param active  active
+     * @param active    active boolean
      */
     public Product(int productId, Date addDate, Category category,
                    Vendor vendor, String productName, int quantityOrdered,
@@ -420,6 +421,7 @@ public class Product {
      *
      * @return the active
      */
+    @JsonIgnore
     public boolean getActive() {
         return active;
     }
@@ -427,11 +429,33 @@ public class Product {
     /**
      * Sets active.
      *
-     * @param active the active
+
      */
+    @JsonIgnore
     public void setActive(boolean active) {
         this.active = active;
     }
 
-
+    @Override
+    public String toString() {
+        return "{" +
+                "productId=" + productId +
+                ", addDate=" + addDate +
+                ", category=" + category +
+                ", vendor=" + vendor +
+                ", productName=" + productName +
+                ", quantityOrdered=" + quantityOrdered +
+                ", weight=" + weight +
+                ", perUnitCost=" + perUnitCost +
+                ", totalCost=" + totalCost +
+                ", orderDate=" + orderDate +
+                ", dateReceived=" + dateReceived +
+                ", quantityReceived=" + quantityReceived +
+                ", paidNotReceived=" + paidNotReceived +
+                ", currentQuantity=" + currentQuantity +
+                ", currentValue=" + currentValue +
+                ", expiration=" + expiration +
+                ", notes=" + notes +
+                '}';
+    }
 }

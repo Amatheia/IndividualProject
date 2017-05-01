@@ -158,6 +158,17 @@
     <url-pattern>/ProductController</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>InventoryController</display-name>
+    <servlet-name>InventoryController</servlet-name>
+    <servlet-class>com.producttracker.controller.InventoryController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InventoryController</servlet-name>
+    <url-pattern>/InventoryController</url-pattern>
+  </servlet-mapping>
+
   <error-page>
     <!-- Missing resource -->
     <error-code>404</error-code>

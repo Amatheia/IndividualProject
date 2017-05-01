@@ -43,10 +43,6 @@ public class Vendor {
     @Column(name="phone")
     private String phone;
 
-    @OneToMany(mappedBy = "vendor", fetch = FetchType.LAZY)
-    @Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.DELETE})
-    List<Product> products;
-
     /**
      * Instantiates a new Vendor.
      */
@@ -220,14 +216,6 @@ public class Vendor {
      */
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
     }
 
     @Override

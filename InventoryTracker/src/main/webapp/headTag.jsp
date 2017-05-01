@@ -18,6 +18,9 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -25,8 +28,15 @@
     <!-- jQuery slim -->
     <script src="https://code.jquery.com/jquery-2.2.4.slim.js"></script>
 
+    <!-- Datatables-->
     <link rel="stylesheet" type="text/css" href="https:///cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+    <link href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.js"></script>
+
+    <link href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.js"></script>
 
     <!-- jQuery UI -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">

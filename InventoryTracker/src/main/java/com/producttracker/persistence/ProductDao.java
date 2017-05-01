@@ -162,7 +162,29 @@ public class ProductDao {
             }
         }
     }
-
+    /*
+    public void updateCurrentQuantity(Product product) {
+        Session session = null;
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+            Criteria crit = session.createCriteria(Product.class);
+            crit.add(Restrictions.eq("currentQuantity", currentQuantity));
+            Product product = (Product) crit.uniqueResult();
+            session.saveOrUpdate(product);
+            transaction.commit();
+            log.info("Updated current quantity");
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+    */
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
