@@ -42,3 +42,4 @@
 | 04/29/17| Individual Project | 8 | |
 | 04/30/17| Individual Project | 8 | |
 | 05/01/17| Individual Project | 8 | |
+| 05/01/17| Final Presentation | 5 | |

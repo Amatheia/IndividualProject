@@ -80,7 +80,7 @@
 - [X] data validation
 - [X] Integration with Team Project web service
 - [X] Fix design, code, etc.
-- [ ] Create final presentation
+- [X] Create final presentation
 
 ### Week 15
 - [ ] Final Presentation
