@@ -3,34 +3,7 @@
 <%@include file="header.jsp"%>
 <script src="scripts/getCategories.js" type="text/javascript"></script>
 <script src="scripts/getProducts.js" type="text/javascript"></script>
-<script>
-    $(document).ready(function () {
-        populateQuantity();
-    });
-
-    function populateQuantity() {
-
-        var selectedText = $("#productList").val();
-        console.log(selectedText);
-        $.ajax({
-            type: "GET",
-            url: "http://localhost:8080/inventorytracker/json/products",
-            data: '{ productId :" ' + selectedText + '"}',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            success: function (data) {
-                $("#currentQuantity").empty();
-                $(data).each(function () {
-                    if (selectedText == this.productId) {
-                        $('#currentQuantity').val(this.currentQuantity);
-                    }
-                });
-            }
-        })
-        return false
-
-    }
-</script>
+<script src="scripts/getCurrentQuantity.js" type="text/javascript"></script>
 
 <div class="span6">
     <br>

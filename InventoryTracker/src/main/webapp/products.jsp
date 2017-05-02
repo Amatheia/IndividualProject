@@ -25,7 +25,8 @@
         <div class="form-group row">
             <label for="category1" class="col-xs-4 control-label">Category:</label>
             <div class="col-xs-8">
-                  <select class="form-control" id="category1" name="category1">
+                  <select class="form-control" id="category1" name="category1" required>
+                      <option value="" selected>select category</option>
                       <c:forEach items="${categories.getAllCategories()}" var="category">
                           <option value='<c:out value="${category.categoryId}"/>'><c:out value="${category.categoryName}"/></option>
                       </c:forEach>
@@ -35,7 +36,8 @@
         <div class="form-group row">
             <label for="vendor1" class="col-xs-4 control-label">Vendor:</label>
             <div class="col-xs-8">
-                <select class="form-control" id="vendor1" name="vendor1">
+                <select class="form-control" id="vendor1" name="vendor1" required>
+                    <option value="" selected>select vendor</option>
                     <c:forEach items="${vendors.getAllVendors()}" var="vendor">
                         <option value='<c:out value="${vendor.vendorId}"/>'><c:out value="${vendor.vendorName}"/></option>
                     </c:forEach>
@@ -45,25 +47,25 @@
         <div class="form-group row">
             <label for="productName" class="col-xs-4 control-label">Product Name:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="productName" name="productName" value="<c:out value="${product.productName}" />" />
+                <input type="text" class="form-control" id="productName" name="productName" value="<c:out value="${product.productName}" />" required />
             </div>
         </div>
         <div class="form-group row">
             <label for="quantityOrdered" class="col-xs-4 control-label">Quantity Ordered:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="quantityOrdered" name="quantityOrdered" value="<c:out value="${product.quantityOrdered}" />" />
+                <input type="text" class="form-control" id="quantityOrdered" name="quantityOrdered" value="<c:out value="${product.quantityOrdered}" />" required />
             </div>
         </div>
         <div class="form-group row">
             <label for="weight" class="col-xs-4 control-label">Weight in lbs:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="weight" name="weight" placeholder="00.0000" value="<c:out value="${product.weight}" />" />
+                <input type="text" class="form-control" id="weight" name="weight" placeholder="00.0000" value="<c:out value="${product.weight}" />" required />
             </div>
         </div>
         <div class="form-group row">
             <label for="perUnitCost" class="col-xs-4 control-label">Per Unit Cost:</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" id="perUnitCost" name="perUnitCost" value="<c:out value="${product.perUnitCost}" />" />
+                <input type="text" class="form-control" id="perUnitCost" name="perUnitCost" value="<c:out value="${product.perUnitCost}" />" required />
             </div>
         </div>
         <div class="form-group row">

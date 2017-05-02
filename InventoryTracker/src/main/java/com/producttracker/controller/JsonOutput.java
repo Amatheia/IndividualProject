@@ -5,6 +5,7 @@ import com.producttracker.entity.Category;
 import com.producttracker.entity.Product;
 import com.producttracker.persistence.CategoryDao;
 import com.producttracker.persistence.ProductDao;
+import com.producttracker.persistence.TaskDao;
 import org.apache.log4j.Logger;
 
 import javax.ws.rs.GET;
@@ -23,7 +24,7 @@ public class JsonOutput {
 
     CategoryDao dao = new CategoryDao();
     ProductDao daoProduct = new ProductDao();
-
+    TaskDao daoTask = new TaskDao();
 
     /**
      * This method is used to return all categories

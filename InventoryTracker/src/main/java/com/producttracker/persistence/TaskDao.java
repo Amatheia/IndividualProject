@@ -1,6 +1,6 @@
 package com.producttracker.persistence;
 
-import com.producttracker.entity.Category;
+import com.producttracker.entity.Task;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,9 +9,9 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 /**
- * @author amatheia.
+ * Created by amatheia.
  */
-public class CategoryDao {
+public class TaskDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
@@ -19,58 +19,34 @@ public class CategoryDao {
      *
      * @return All categories
      */
-    public List<Category> getAllCategories() {
-        List<Category> categories = null;
+    public List<Task> getAllTasks() {
+        List<Task> tasks = null;
         Session session = null;
         try {
             session = openSession();
-            categories = session.createCriteria(Category.class).list();
+            tasks = session.createCriteria(Task.class).list();
         } catch (HibernateException he) {
             log.error("Exception: " + he);
         } catch (Exception e) {
             log.error("Exception: " + e.getMessage());
         }
-        return categories;
+        return tasks;
     }
 
     /**
-     * retrieve a category given their id
+     * add a task
      *
-     * @param id the category's id
-     * @return category
-     */
-    public Category getCategory(int id) {
-        Category category = null;
-        Session session = null;
-        try {
-            session = openSession();
-            category = (Category) session.get(Category.class, id);
-        } catch (HibernateException he) {
-            log.error("Exception: " + he);
-        } catch (Exception e) {
-            log.error("Exception: " + e.getMessage());
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return category;
-    }
-
-    /**
-     * add a category
-     *
-     * @param category
+     * @param task
      * @return the id of the inserted record
      */
-    public int addCategory(Category category) {
+    public int addTask(Task task) {
         int id = 0;
         Session session = null;
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
-            id = (int) session.save(category);
-            log.info("Inserting record" + category);
+            id = (int) session.save(task);
+            log.info("Inserting record" + task);
             transaction.commit();
         } catch (HibernateException he) {
             log.error("Exception: " + he);
@@ -86,18 +62,18 @@ public class CategoryDao {
     }
 
     /**
-     * delete a category by id
-     * @param id the category's id
+     * delete a task by id
+     * @param id the task's id
      */
-    public int deleteCategory(int id) {
+    public int deleteTask(int id) {
         Session session = null;
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
-            Category category = (Category) session.load(Category.class, id);
-            session.delete(category);
+            Task task = (Task) session.load(Task.class, id);
+            session.delete(task);
             transaction.commit();
-            log.info("Deleted category: " + id);
+            log.info("Deleted task: " + id);
         } catch (HibernateException he) {
             log.error("Exception: " + he);
         } catch (Exception e) {
@@ -112,17 +88,17 @@ public class CategoryDao {
     }
 
     /**
-     * Update the category
-     * @param category
+     * Update the task
+     * @param task
      */
-    public void updateCategory(Category category) {
+    public void updateTask(Task task) {
         Session session = null;
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
-            session.update(category);
+            session.update(task);
             transaction.commit();
-            log.info("Updated: " + category);
+            log.info("Updated: " + task);
         } catch (HibernateException he) {
             log.error("Exception: " + he);
         } catch (Exception e) {

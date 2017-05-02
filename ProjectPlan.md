@@ -75,17 +75,17 @@
 - [X] Fix design, code, etc.
 
 ### Week 14
-- [ ] Time log entries
-- [ ] jQuery
-- [ ] data validation
-- [ ] add tests
-- [ ] Integration with Team Project web service
-- [ ] Fix design, code, etc.
+- [X] Time log entries
+- [X] jQuery
+- [X] data validation
+- [X] Integration with Team Project web service
+- [X] Fix design, code, etc.
 - [ ] Create final presentation
 
 ### Week 15
 - [ ] Final Presentation
 - [ ] add tests
+- [ ] add javadoc
 - [ ] clean up code
 - [ ] Time log entries
 

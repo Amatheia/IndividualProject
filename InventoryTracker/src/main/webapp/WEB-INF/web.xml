@@ -28,6 +28,17 @@
 
   <security-constraint>
     <web-resource-collection>
+      <web-resource-name>updateInventory</web-resource-name>
+      <url-pattern>/updateInventory.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
       <web-resource-name>categoryList</web-resource-name>
       <url-pattern>/categoryList.jsp</url-pattern>
     </web-resource-collection>
@@ -167,6 +178,17 @@
   <servlet-mapping>
     <servlet-name>InventoryController</servlet-name>
     <url-pattern>/InventoryController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>TaskController</display-name>
+    <servlet-name>TaskController</servlet-name>
+    <servlet-class>com.producttracker.controller.TaskController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TaskController</servlet-name>
+    <url-pattern>/TaskController</url-pattern>
   </servlet-mapping>
 
   <error-page>

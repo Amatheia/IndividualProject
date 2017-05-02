@@ -7,11 +7,11 @@
         <form class="form-horizontal" id="userLogin" action="j_security_check" method="post">
             <div class="form-group">
                 <label for="username">User:</label>
-                <input type="text" name="j_username" class="form-control" id="username" placeholder="Enter username">
+                <input type="text" name="j_username" class="form-control" id="username" placeholder="Enter username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" name="j_password" class="form-control" id="password" placeholder="Password">
+                <input type="password" name="j_password" class="form-control" id="password" placeholder="Password" required>
             </div>
             <div align="center">
                 <button type="submit" class="btn btn-default" value="login">Login</button>

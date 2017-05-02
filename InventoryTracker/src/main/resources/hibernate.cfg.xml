@@ -25,6 +25,7 @@
         <mapping class="com.producttracker.entity.Product"/>
         <mapping class="com.producttracker.entity.Category"/>
         <mapping class="com.producttracker.entity.Vendor"/>
+        <mapping class="com.producttracker.entity.Task"/>
 
     </session-factory>
 

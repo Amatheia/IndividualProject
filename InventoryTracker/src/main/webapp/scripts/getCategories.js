@@ -1,10 +1,10 @@
 /**
- * Created by amalbaugh on 4/30/17.
+ * Created by amatheia.
  */
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/inventorytracker/json/categories",
+        url: "/inventorytracker/json/categories",
         data: "data",
         contentType: "application/json; charset=utf-8",
         dataType: "json",

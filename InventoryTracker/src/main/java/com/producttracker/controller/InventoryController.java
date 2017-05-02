@@ -2,7 +2,11 @@ package com.producttracker.controller;
 
 import com.producttracker.entity.Product;
 import com.producttracker.persistence.ProductDao;
+import com.producttracker.persistence.SessionFactoryProvider;
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,22 +35,23 @@ public class InventoryController extends HttpServlet {
 
         log.info("In the doPost()");
 
-        Product product = new Product();
-        try {
-            product.setCurrentQuantity(Integer.parseInt(request.getParameter("currentQuantity")));
-        } catch (NumberFormatException e) {
-            log.info("NumberFormatException" + e + "null");
-            product.setCurrentQuantity(null);
-        }
+        int productId = Integer.parseInt(request.getParameter("productList"));
+        int currentQuantity = Integer.parseInt(request.getParameter("currentQuantity"));
 
-        dao.updateProduct(product);
+        SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
+        Session session = factory.openSession();
+        Transaction tx = session.beginTransaction();
+        Product product = (Product) session.get(Product.class, productId);
+        product.setCurrentQuantity(currentQuantity);
+        session.update(product);
+        tx.commit();
+        session.close();
 
         RequestDispatcher view = request.getRequestDispatcher("/inventory.jsp");
         request.setAttribute("products", dao.getAllProducts());
         view.forward(request, response);
 
-
-        log.info("Updated product current quantity: " + request.getParameter("currentQuantity"));
+        log.info("Updated product current quantity: " + currentQuantity);
     }
 }

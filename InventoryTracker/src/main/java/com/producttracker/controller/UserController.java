@@ -62,8 +62,6 @@ public class UserController extends HttpServlet {
 
         log.info("In the doPost()");
 
-//   TODO     HttpSession session = request.getSession(true);
-
         User user = new User();
         user.setRole(request.getParameter("role"));
         user.setFirstName(request.getParameter("firstName"));

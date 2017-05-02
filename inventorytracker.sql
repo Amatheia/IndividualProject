@@ -1,4 +1,4 @@
-Food Product Tracker
+Food Inventory Tracker
 
 create table users (
     `user_id` int(12) NOT NULL auto_increment,
@@ -25,6 +25,14 @@ ALTER TABLE user_roles ADD CONSTRAINT user_roles_ibfk_1 FOREIGN KEY (role_name, 
 CREATE TRIGGER role_after_insert AFTER INSERT ON `users` 
     FOR EACH ROW
     INSERT INTO user_roles (username, role_name) VALUES (new.username, new.role_name);
+
+    
+create table tasks (
+  `task_id` int(12) NOT NULL auto_increment,
+  `task_description` varchar(500),
+  `task_date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY  (task_id)
+);    
 
 
 create table categories (

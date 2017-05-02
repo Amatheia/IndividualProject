@@ -19,7 +19,7 @@
                 <div class="form-group row">
                     <label for="vendorName" class="col-xs-4 control-label">Vendor Name:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="vendorName" name="vendorName" value="<c:out value="${vendor.vendorName}" />" />
+                        <input type="text" class="form-control" id="vendorName" name="vendorName" value="<c:out value="${vendor.vendorName}" />" required />
                     </div>
                 </div>
                 <div class="form-group row">

@@ -21,7 +21,7 @@
                 <div class="form-group row">
                     <label for="role" class="col-xs-4 control-label">Role or Title:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="role" name="role" value="<c:out value="${user.role}" />" />
+                        <input type="text" class="form-control" id="role" name="role" value="<c:out value="${user.role}" />" required />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -39,13 +39,13 @@
                 <div class="form-group row">
                     <label for="username" class="col-xs-4 control-label">Username:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="username" name="username" value="<c:out value="${user.username}" />" />
+                        <input type="text" class="form-control" id="username" name="username" value="<c:out value="${user.username}" />" required />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="password" class="col-xs-4 control-label">Password:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="password" name="password" value="<c:out value="${user.password}" />" />
+                        <input type="text" class="form-control" id="password" name="password" value="<c:out value="${user.password}" />" required />
                     </div>
                 </div>
                 <br/>

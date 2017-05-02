@@ -7,7 +7,7 @@
 <div class="container">
     <div class="col-sm-6 col-sm-offset-3">
         <h3>Contact</h3>
-        <form role="form" id="contactForm" action="http://formspree.io/amalbaugh@gmail.com" method="post">
+        <form role="form" id="contactForm" action="http://formspree.io/foodinventorytracker@gmail.com" method="post">
             <div class="row">
                 <div class="form-group col-sm-6">
                     <label for="name" class="h4">Name</label>

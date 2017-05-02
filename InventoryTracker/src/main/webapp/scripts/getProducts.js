@@ -6,7 +6,7 @@ function populateProduct() {
     var selectedText1 = $("#categoryList").val();
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/inventorytracker/json/products",
+        url: "/inventorytracker/json/products",
         data: '{ categoryId :" ' + selectedText1 + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',

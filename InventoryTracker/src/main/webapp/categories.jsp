@@ -19,7 +19,7 @@
                 <div class="form-group row">
                     <label for="categoryName" class="col-xs-4 control-label">Category Name:</label>
                     <div class="col-xs-8">
-                        <input type="text" class="form-control" id="categoryName" name="categoryName" value="<c:out value="${category.categoryName}" />" />
+                        <input type="text" class="form-control" id="categoryName" name="categoryName" value="<c:out value="${category.categoryName}" />" required />
                     </div>
                 </div>
                 <div class="form-group row">
