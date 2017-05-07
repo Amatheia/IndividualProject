@@ -29,19 +29,16 @@
             </div>
             <div align="center">
                 <button type="submit" class="btn btn-default" value="register new user">Submit</button>
-                <button type="reset" class="btn btn-default" value="reset">Reset</button>
+                <button type="reset" class="btn btn-default" value="reset" id="reset">Reset</button>
             </div>
         </form>
     </div>
-    <h4><a href="login.jsp">Return to Login</a></h4>
+    <h4><a href="/inventorytracker/">Return to Login</a></h4>
 </div>
 <br/>
 <div align="center">
     <p>Copyright Amatheia 2017. All rights reserved.</p><br/>
 </div>
-
-<!-- javascript at the bottom for fast page loading -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
 
 </body>
 </html>

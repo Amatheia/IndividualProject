@@ -1,42 +1,45 @@
 package com.producttracker.persistence;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-import java.util.List;
 
 /**
- * Created by amalbaugh on 4/19/17.
+ * Generic dao
+ * @author amatheia
  */
-public class Dao {
+public class Dao implements AutoCloseable {
 
+    protected Session session;
     private final Logger log = Logger.getLogger(this.getClass());
 
-    private SessionFactory sessionFactory;
-
-    public <T> List<T> getAll(final Class<T> type) {
-        final Session session = sessionFactory.getCurrentSession();
-        final Criteria crit = session.createCriteria(type);
-        return crit.list();
+    /**
+     * Empty constructor sets up session
+     */
+    public Dao() {
+        log.info("Open new Hibernate session");
+        session = SessionFactoryProvider.getSessionFactory().openSession();
     }
 
-    public <T> T get(final Class<T> type, int id){
-        return (T) sessionFactory.getCurrentSession().get(type, id);
+    /**
+     * Create a new Dao with a session
+     * @param session Session
+     */
+    public Dao (Session session) {
+        this.session = session;
     }
 
-    public <T> T save(final T o){
-        return (T) sessionFactory.getCurrentSession().save(o);
+    @Override
+    public void close() throws Exception {
+        try {
+            if (session != null) {
+                session.close();
+            }
+            log.info("Close Hibernate session");
+        } catch (HibernateException he) {
+            log.error("Exception: " + he);
+        } catch (Exception e) {
+            log.error("Exception: " + e.getMessage());
+        }
     }
-
-
-    public void delete(final Object object){
-        sessionFactory.getCurrentSession().delete(object);
-    }
-
-    public <T> void saveOrUpdate(final T o){
-        sessionFactory.getCurrentSession().saveOrUpdate(o);
-    }
-
 }

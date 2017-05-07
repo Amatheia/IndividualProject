@@ -83,10 +83,10 @@
 - [X] Create final presentation
 
 ### Week 15
-- [ ] Final Presentation
-- [ ] add tests
+- [X] Final Presentation
+- [X] add tests
 - [ ] add javadoc
-- [ ] clean up code
+- [X] clean up code
 - [ ] Time log entries
 
 ### Week 16

@@ -6,8 +6,7 @@ $(document).ready(function () {
     $('#UserController').validate({
         rules: {
             role: {
-                required: true,
-                lettersonly: true
+                required: true
             },
             firstname: {
                 required: true,

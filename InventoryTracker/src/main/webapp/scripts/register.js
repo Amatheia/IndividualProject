@@ -2,8 +2,7 @@
  * jQuery form validation for user registration.
  */
 $(document).ready(function () {
-
-    $('#userRegister').validate({
+    var validator = $('#userRegister').validate({
         rules: {
             firstname: {
                 required: true,
@@ -33,4 +32,7 @@ $(document).ready(function () {
         }
     });
 
+    $("#reset").click(function() {
+        validator.resetForm();
+    });
 });

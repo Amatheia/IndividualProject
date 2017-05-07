@@ -29,7 +29,7 @@ CREATE TRIGGER role_after_insert AFTER INSERT ON `users`
     
 create table tasks (
   `task_id` int(12) NOT NULL auto_increment,
-  `task_description` varchar(500),
+  `task_description` varchar(200) NOT NULL,
   `task_date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY  (task_id)
 );    

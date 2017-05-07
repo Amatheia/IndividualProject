@@ -2,35 +2,43 @@ package com.producttracker.persistence;
 
 import com.producttracker.entity.Task;
 import org.apache.log4j.Logger;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.List;
 
 /**
  * Created by amatheia.
  */
-public class TaskDao {
+public class TaskDao extends Dao {
 
     private final Logger log = Logger.getLogger(this.getClass());
+    private int id = 0;
 
-    /** Return a list of all categories
+    /**
+     * Empty constructor assigns session
+     */
+    public TaskDao() {
+        super();
+    }
+
+    /** Return a list of all tasks
      *
-     * @return All categories
+     * @return All tasks
      */
     public List<Task> getAllTasks() {
-        List<Task> tasks = null;
-        Session session = null;
-        try {
-            session = openSession();
-            tasks = session.createCriteria(Task.class).list();
-        } catch (HibernateException he) {
-            log.error("Exception: " + he);
-        } catch (Exception e) {
-            log.error("Exception: " + e.getMessage());
-        }
+        List<Task> tasks;
+        tasks = session.createCriteria(Task.class).list();
         return tasks;
+    }
+
+    /**
+     * retrieve a task given the id
+     *
+     * @param id the task id
+     * @return task
+     */
+    public Task getTask(int id) {
+        log.debug("getting Tasks with id: " + id);
+        return (Task)session.get(Task.class, id);
     }
 
     /**
@@ -40,24 +48,10 @@ public class TaskDao {
      * @return the id of the inserted record
      */
     public int addTask(Task task) {
-        int id = 0;
-        Session session = null;
-        try {
-            session = openSession();
-            Transaction transaction = session.beginTransaction();
-            id = (int) session.save(task);
-            log.info("Inserting record" + task);
-            transaction.commit();
-        } catch (HibernateException he) {
-            log.error("Exception: " + he);
-        } catch (Exception e) {
-            log.error("Exception: " + e.getMessage());
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-
+        session.beginTransaction();
+        id = (int) session.save(task);
+        log.info("Inserting record" + task.getTaskId());
+        session.getTransaction().commit();
         return id;
     }
 
@@ -66,24 +60,11 @@ public class TaskDao {
      * @param id the task's id
      */
     public int deleteTask(int id) {
-        Session session = null;
-        try {
-            session = openSession();
-            Transaction transaction = session.beginTransaction();
-            Task task = (Task) session.load(Task.class, id);
-            session.delete(task);
-            transaction.commit();
-            log.info("Deleted task: " + id);
-        } catch (HibernateException he) {
-            log.error("Exception: " + he);
-        } catch (Exception e) {
-            log.error("Exception: " + e.getMessage());
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-
+        session.beginTransaction();
+        Task task = (Task) session.load(Task.class, id);
+        session.delete(task);
+        session.getTransaction().commit();
+        log.info("Deleted task: " + id);
         return id;
     }
 
@@ -92,25 +73,9 @@ public class TaskDao {
      * @param task
      */
     public void updateTask(Task task) {
-        Session session = null;
-        try {
-            session = openSession();
-            Transaction transaction = session.beginTransaction();
-            session.update(task);
-            transaction.commit();
-            log.info("Updated: " + task);
-        } catch (HibernateException he) {
-            log.error("Exception: " + he);
-        } catch (Exception e) {
-            log.error("Exception: " + e.getMessage());
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-    }
-
-    private Session openSession() {
-        return SessionFactoryProvider.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(task);
+        session.getTransaction().commit();
+        log.info("Updated: " + task);
     }
 }

@@ -43,3 +43,4 @@
 | 04/30/17| Individual Project | 8 | |
 | 05/01/17| Individual Project | 8 | |
 | 05/01/17| Final Presentation | 5 | |
+| 05/06/17| Individual Project - Generic Dao, tests | 8 | |
