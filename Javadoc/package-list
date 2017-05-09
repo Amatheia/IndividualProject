@@ -1,0 +1,5 @@
+com.producttracker
+com.producttracker.controller
+com.producttracker.entity
+com.producttracker.persistence
+com.producttracker.util
