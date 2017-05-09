@@ -56,7 +56,7 @@ public class CategoryDao extends Dao {
     /**
      * add a category
      *
-     * @param category
+     * @param category the category object
      * @return the id of the inserted record
      */
     public int addCategory(Category category) {
@@ -70,6 +70,7 @@ public class CategoryDao extends Dao {
     /**
      * delete a category by id
      * @param id the category's id
+     * @return the id of the deleted record
      */
     public int deleteCategory(int id) {
         session.beginTransaction();
@@ -82,7 +83,7 @@ public class CategoryDao extends Dao {
 
     /**
      * Update the category
-     * @param category
+     * @param category the category object
      */
     public void updateCategory(Category category) {
         session.beginTransaction();

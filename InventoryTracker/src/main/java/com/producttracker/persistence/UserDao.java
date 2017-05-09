@@ -57,7 +57,7 @@ public class UserDao extends Dao {
     /**
      * add a user
      *
-     * @param user
+     * @param user the user object
      * @return the id of the inserted record
      */
     public int addUser(User user) {
@@ -71,6 +71,7 @@ public class UserDao extends Dao {
     /**
      * delete a user by id
      * @param id the user's id
+     * @return the id of the deleted record
      */
     public int deleteUser(int id) {
         session.beginTransaction();
@@ -83,7 +84,7 @@ public class UserDao extends Dao {
 
     /**
      * Update the user
-     * @param user
+     * @param user the user object
      */
     public void updateUser(User user) {
         session.beginTransaction();

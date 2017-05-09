@@ -57,7 +57,7 @@ public class ProductDao extends Dao {
     /**
      * add a product
      *
-     * @param product
+     * @param product the product object
      * @return the id of the inserted record
      */
     public int addProduct(Product product) {
@@ -72,6 +72,7 @@ public class ProductDao extends Dao {
      * delete a product by id
      *
      * @param id the product's id
+     * @return the id of the deleted record
      */
     public int deleteProduct(int id) {
         session.beginTransaction();
@@ -85,7 +86,7 @@ public class ProductDao extends Dao {
     /**
      * Update the product
      *
-     * @param product
+     * @param product the product object
      */
     public void updateProduct(Product product) {
         session.beginTransaction();

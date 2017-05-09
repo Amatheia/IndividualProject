@@ -56,7 +56,7 @@ public class TaskDao extends Dao {
     /**
      * add a task
      *
-     * @param task
+     * @param task the task object
      * @return the id of the inserted record
      */
     public int addTask(Task task) {
@@ -70,6 +70,7 @@ public class TaskDao extends Dao {
     /**
      * delete a task by id
      * @param id the task's id
+     * @return the id of the deleted record
      */
     public int deleteTask(int id) {
         session.beginTransaction();
@@ -82,7 +83,7 @@ public class TaskDao extends Dao {
 
     /**
      * Update the task
-     * @param task
+     * @param task the task object
      */
     public void updateTask(Task task) {
         session.beginTransaction();

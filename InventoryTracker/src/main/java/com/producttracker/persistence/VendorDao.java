@@ -57,7 +57,7 @@ public class VendorDao extends Dao {
     /**
      * add a vendor
      *
-     * @param vendor
+     * @param vendor the vendor object
      * @return the id of the inserted record
      */
     public int addVendor(Vendor vendor) {
@@ -72,6 +72,7 @@ public class VendorDao extends Dao {
      * delete a vendor by id
      *
      * @param id the vendor's id
+     * @return the id of the deleted record
      */
     public int deleteVendor(int id) {
         session.beginTransaction();
@@ -85,7 +86,7 @@ public class VendorDao extends Dao {
     /**
      * Update the vendor
      *
-     * @param vendor
+     * @param vendor the vendor object
      */
     public void updateVendor(Vendor vendor) {
         session.beginTransaction();

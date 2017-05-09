@@ -13,7 +13,10 @@ $(document).ready(function() {
     var updateTotal = function () {
         var input1 = parseFloat($('#currentQuantity').val());
         var input2 = parseFloat($('#perUnitCost').val());
+        var total = input1 * input2;
+        if (!isNaN(total)) {
+            parseFloat($('#currentValue').val(total.toFixed(2)));
+        }
 
-        parseFloat($('#currentValue').val(input1 * input2));
     }
 });
