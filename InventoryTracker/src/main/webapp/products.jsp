@@ -3,7 +3,6 @@
 <%@include file="header.jsp"%>
 <jsp:useBean id="categories" class="com.producttracker.persistence.CategoryDao"/>
 <jsp:useBean id="vendors" class="com.producttracker.persistence.VendorDao"/>
-<script src="scripts/productsForm.js" type="text/javascript"></script>
 <script src="scripts/calendar.js" type="text/javascript"></script>
 <script src="scripts/totalCost.js" type="text/javascript"></script>
 <script src="scripts/currentValue.js" type="text/javascript"></script>
@@ -26,9 +25,9 @@
             <label for="category1" class="col-xs-4 control-label">Category:</label>
             <div class="col-xs-8">
                   <select class="form-control" id="category1" name="category1" required>
-                      <option value="" selected>select category</option>
+                      <option value="">select category</option>
                       <c:forEach items="${categories.getAllCategories()}" var="category">
-                          <option value='<c:out value="${category.categoryId}"/>'><c:out value="${category.categoryName}"/></option>
+                          <option value="${category.categoryId}"><c:out value="${category.categoryName}"/></option>
                       </c:forEach>
                   </select>
             </div>
@@ -37,9 +36,9 @@
             <label for="vendor1" class="col-xs-4 control-label">Vendor:</label>
             <div class="col-xs-8">
                 <select class="form-control" id="vendor1" name="vendor1" required>
-                    <option value="" selected>select vendor</option>
+                    <option value="">select vendor</option>
                     <c:forEach items="${vendors.getAllVendors()}" var="vendor">
-                        <option value='<c:out value="${vendor.vendorId}"/>'><c:out value="${vendor.vendorName}"/></option>
+                        <option value="${vendor.vendorId}"><c:out value="${vendor.vendorName}"/></option>
                     </c:forEach>
                 </select>
             </div>

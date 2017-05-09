@@ -23,8 +23,19 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
- * A servlet to get products.
+ * The Food Inventory Tracker program outputs an inventory management web application
+ * for internal use by a restaurant. It implements a food expiration web service to get
+ * a food expiration duration. User roles are in place. Registered users are able to add tasks,
+ * update the current quantity of a product, and view products, categories, and vendors.
+ * Only admin are allowed to completely update a product; add/delete products, categories,
+ * and vendors. Only admin may view/update/delete the users list. A registered user may request
+ * admin privileges by filling out the contact form.
+ *
+ * A servlet to add products, perform delete action, and forward to update product form.
+ *
  * @author amatheia
+ * @version 1.0
+ * @since 2017-05-10
  */
 @ServletSecurity(@HttpConstraint(rolesAllowed = "admin"))
 public class ProductController extends HttpServlet {
@@ -39,11 +50,19 @@ public class ProductController extends HttpServlet {
         dao = new ProductDao();
     }
 
+    /**
+     *  Handles HTTP GET requests. Performs delete action. Forwards to update product form.
+     *
+     *@param  request               The request parameter
+     *@param  response              The response parameter
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         log.info("In the doGet()");
 
-        String forward = "";
+        String forward;
         String action = request.getParameter("action");
 
         if (action.equalsIgnoreCase("delete")){
@@ -67,6 +86,15 @@ public class ProductController extends HttpServlet {
         view.forward(request, response);
     }
 
+    /**
+     *  Handles HTTP POST requests. Gets products form parameters and adds product to database.
+     *  Forwards to inventory list.
+     *
+     *@param  request               The request parameter
+     *@param  response              The response parameter
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         log.info("In the doPost()");
@@ -91,6 +119,7 @@ public class ProductController extends HttpServlet {
 
         product.setProductName(request.getParameter("productName"));
         product.setQuantityOrdered(Integer.parseInt(request.getParameter("quantityOrdered")));
+
         try {
             DecimalFormatSymbols symbols = new DecimalFormatSymbols();
             symbols.setGroupingSeparator(',');
@@ -104,6 +133,7 @@ public class ProductController extends HttpServlet {
         } catch (Exception e) {
             log.error("Exception" + e);
         }
+
         try {
             DecimalFormatSymbols symbols = new DecimalFormatSymbols();
             symbols.setGroupingSeparator(',');
@@ -117,6 +147,7 @@ public class ProductController extends HttpServlet {
         } catch (Exception e) {
             log.error("Exception" + e);
         }
+
         try {
             DecimalFormatSymbols symbols = new DecimalFormatSymbols();
             symbols.setGroupingSeparator(',');
@@ -130,6 +161,7 @@ public class ProductController extends HttpServlet {
         } catch (Exception e) {
             log.error("Exception" + e);
         }
+
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate orderDate = LocalDate.parse(request.getParameter("orderDate"), formatter);
@@ -137,6 +169,7 @@ public class ProductController extends HttpServlet {
         } catch (Exception e) {
             log.error("Exception" + e);
         }
+
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate dateReceived = LocalDate.parse(request.getParameter("dateReceived"), formatter);
@@ -179,6 +212,7 @@ public class ProductController extends HttpServlet {
         } catch (Exception e) {
             log.error("Exception" + e);
         }
+
         product.setExpiration(request.getParameter("expiration"));
         product.setNotes(request.getParameter("notes"));
         boolean checkbox = request.getParameter( "active" ) != null;

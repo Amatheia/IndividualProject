@@ -85,13 +85,12 @@
 ### Week 15
 - [X] Final Presentation
 - [X] add tests
-- [ ] add javadoc
+- [X] add javadoc
 - [X] clean up code
-- [ ] Time log entries
+- [X] Time log entries
 
 ### Week 16
-- [ ] Time log entries
-- [ ] Final Project Due
+- [X] Time log entries
 
 
 

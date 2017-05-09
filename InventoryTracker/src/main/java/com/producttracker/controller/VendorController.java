@@ -14,8 +14,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * A servlet to get vendors.
+ * The Food Inventory Tracker program outputs an inventory management web application
+ * for internal use by a restaurant. It implements a food expiration web service to get
+ * a food expiration duration. User roles are in place. Registered users are able to add tasks,
+ * update the current quantity of a product, and view products, categories, and vendors.
+ * Only admin are allowed to completely update a product; add/delete products, categories,
+ * and vendors. Only admin may view/update/delete the users list. A registered user may request
+ * admin privileges by filling out the contact form.
+ *
+ * A servlet to add vendors, perform delete action, and forward to update vendor form.
+ *
  * @author amatheia
+ * @version 1.0
+ * @since 2017-05-10
  */
 @ServletSecurity(@HttpConstraint(rolesAllowed = "admin"))
 public class VendorController extends HttpServlet {
@@ -30,6 +41,14 @@ public class VendorController extends HttpServlet {
         dao = new VendorDao();
     }
 
+    /**
+     *  Handles HTTP GET requests. Performs delete action. Forwards to update vendor form.
+     *
+     *@param  request               The request parameter
+     *@param  response              The response parameter
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         log.info("In the doGet()");
@@ -58,6 +77,15 @@ public class VendorController extends HttpServlet {
         view.forward(request, response);
     }
 
+    /**
+     *  Handles HTTP POST requests. Gets vendors form parameters and adds vendor to database.
+     *  Forwards to vendor list.
+     *
+     *@param  request               The request parameter
+     *@param  response              The response parameter
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         log.info("In the doPost()");

@@ -42,7 +42,6 @@ create table categories (
   PRIMARY KEY  (category_id)
 );
 
-
 create table vendors (
   `vendor_id` int(12) NOT NULL auto_increment,
   `vendor_name` varchar(40) NOT NULL,
@@ -82,5 +81,4 @@ create table products (
   REFERENCES vendors(vendor_id)
   ON UPDATE CASCADE
   ON DELETE RESTRICT
-);	
-
+);

@@ -1,27 +1,36 @@
 package com.producttracker.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
+ * The Food Inventory Tracker program outputs an inventory management web application
+ * for internal use by a restaurant. It implements a food expiration web service to get
+ * a food expiration duration. User roles are in place. Registered users are able to add tasks,
+ * update the current quantity of a product, and view products, categories, and vendors.
+ * Only admin are allowed to completely update a product; add/delete products, categories,
+ * and vendors. Only admin may view/update/delete the users list. A registered user may request
+ * admin privileges by filling out the contact form.
+ *
  * A class to represent a category.
  *
  * @author amatheia
+ * @version 1.0
+ * @since 2017-05-10
  */
-
 @Entity (name = "categories")
 public class Category {
 
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    @Column(name="category_id")
     private int categoryId;
 
+    @Column(name = "category_name", unique = true)
     private String categoryName;
 
+    @Column(name="description")
     private String description;
 
     /**
@@ -48,10 +57,6 @@ public class Category {
      *
      * @return the categoryId
      */
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
-    @Column(name="category_id")
     public int getCategoryId() {
         return categoryId;
     }
@@ -70,7 +75,6 @@ public class Category {
      *
      * @return the categoryName
      */
-    @Column(name = "category_name", unique = true)
     public String getCategoryName() {
         return categoryName;
     }
@@ -89,7 +93,6 @@ public class Category {
      *
      * @return the description
      */
-    @Column(name="description")
     public String getDescription() {
         return description;
     }

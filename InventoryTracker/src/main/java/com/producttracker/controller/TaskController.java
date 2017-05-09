@@ -11,7 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by amatheia.
+ * The Food Inventory Tracker program outputs an inventory management web application
+ * for internal use by a restaurant. It implements a food expiration web service to get
+ * a food expiration duration. User roles are in place. Registered users are able to add tasks,
+ * update the current quantity of a product, and view products, categories, and vendors.
+ * Only admin are allowed to completely update a product; add/delete products, categories,
+ * and vendors. Only admin may view/update/delete the users list. A registered user may request
+ * admin privileges by filling out the contact form.
+ *
+ * A servlet to add tasks and perform delete action.
+ *
+ * @author amatheia
+ * @version 1.0
+ * @since 2017-05-10
  */
 public class TaskController extends HttpServlet {
 
@@ -23,6 +35,14 @@ public class TaskController extends HttpServlet {
         dao = new TaskDao();
     }
 
+    /**
+     *  Handles HTTP GET requests. Performs delete action.
+     *
+     *@param  request               The request parameter
+     *@param  response              The response parameter
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -41,6 +61,14 @@ public class TaskController extends HttpServlet {
 
     }
 
+    /**
+     *  Handles HTTP POST requests. Gets task form parameters and adds task to database.
+     *
+     *@param  request               The request parameter
+     *@param  response              The response parameter
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

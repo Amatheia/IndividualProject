@@ -11,11 +11,20 @@ import java.time.LocalDate;
 import java.util.Date;
 
 /**
+ * The Food Inventory Tracker program outputs an inventory management web application
+ * for internal use by a restaurant. It implements a food expiration web service to get
+ * a food expiration duration. User roles are in place. Registered users are able to add tasks,
+ * update the current quantity of a product, and view products, categories, and vendors.
+ * Only admin are allowed to completely update a product; add/delete products, categories,
+ * and vendors. Only admin may view/update/delete the users list. A registered user may request
+ * admin privileges by filling out the contact form.
+ *
  * A class to represent a product.
  *
  * @author amatheia
+ * @version 1.0
+ * @since 2017-05-10
  */
-
 @Entity (name = "products")
 public class Product {
 
@@ -38,7 +47,7 @@ public class Product {
     @JoinColumn(name = "vendor_id", nullable = false, insertable = true, updatable = true)
     private Vendor vendor;
 
-    @Column(name="product_name")
+    @Column(name="product_name", unique = true)
     private String productName;
 
     @Column(name = "quantity_ordered")
@@ -93,20 +102,20 @@ public class Product {
      * Instantiates a new Product.
      *
      * @param productId     the product id
-     * @param addDate   the addDate
+     * @param addDate   the add date
      * @param category   the category id
      * @param vendor    the vendor id
      * @param productName    the product name
-     * @param quantityOrdered    the quantityOrdered
+     * @param quantityOrdered    the quantity ordered
      * @param weight    the weight
-     * @param perUnitCost    the perUnitCost
-     * @param totalCost    the totalCost
-     * @param orderDate    the orderDate
-     * @param dateReceived   the dateReceived
-     * @param quantityReceived   the quantityReceived
-     * @param paidNotReceived   the paidNotReceived
-     * @param currentQuantity  the currentQuantity
-     * @param currentValue  the currentValue
+     * @param perUnitCost    the per unit cost
+     * @param totalCost    the total cost
+     * @param orderDate    the order date
+     * @param dateReceived   the date received
+     * @param quantityReceived   the quantity received
+     * @param paidNotReceived   the quantity of paid for but not received
+     * @param currentQuantity  the current quantity
+     * @param currentValue  the current value
      * @param expiration  the expiration
      * @param notes  the notes
      * @param active    active boolean
@@ -115,8 +124,8 @@ public class Product {
                    Vendor vendor, String productName, int quantityOrdered,
                    BigDecimal weight, BigDecimal perUnitCost, BigDecimal totalCost,
                    LocalDate orderDate, LocalDate dateReceived,
-                   Integer quantityReceived, Integer paidNotReceived, Integer currentQuantity,
-                   BigDecimal currentValue, String expiration,
+                   Integer quantityReceived, Integer paidNotReceived,
+                   Integer currentQuantity, BigDecimal currentValue, String expiration,
                    String notes, boolean active) {
         this.productId = productId;
         this.addDate = addDate;
@@ -166,18 +175,38 @@ public class Product {
         return addDate;
     }
 
+    /**
+     * Gets category.
+     *
+     * @return the category
+     */
     public Category getCategory() {
         return this.category;
     }
 
+    /**
+     * Sets category.
+     *
+     * @param category the category
+     */
     public void setCategory(Category category) {
         this.category = category;
     }
 
+    /**
+     * Gets vendor.
+     *
+     * @return the vendor
+     */
     public Vendor getVendor() {
         return this.vendor;
     }
 
+    /**
+     * Sets vendor.
+     *
+     * @param vendor the vendor
+     */
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
     }
@@ -419,7 +448,7 @@ public class Product {
     /**
      * Gets active.
      *
-     * @return the active
+     * @return the active boolean
      */
     @JsonIgnore
     public boolean getActive() {
@@ -429,7 +458,7 @@ public class Product {
     /**
      * Sets active.
      *
-
+     *@param active the active boolean
      */
     @JsonIgnore
     public void setActive(boolean active) {

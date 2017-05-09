@@ -5,14 +5,22 @@ import org.hibernate.annotations.*;
 import java.util.Date;
 import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
+ * The Food Inventory Tracker program outputs an inventory management web application
+ * for internal use by a restaurant. It implements a food expiration web service to get
+ * a food expiration duration. User roles are in place. Registered users are able to add tasks,
+ * update the current quantity of a product, and view products, categories, and vendors.
+ * Only admin are allowed to completely update a product; add/delete products, categories,
+ * and vendors. Only admin may view/update/delete the users list. A registered user may request
+ * admin privileges by filling out the contact form.
+ *
  * A class to represent a user.
  *
  * @author amatheia
+ * @version 1.0
+ * @since 2017-05-10
  */
-
 @Entity (name = "users")
 @DynamicInsert
 @DynamicUpdate
@@ -33,7 +41,7 @@ public class User {
     @Column(name="last_name")
     private String lastName;
 
-    @Column(name="username")
+    @Column(name="username", unique = true)
     private String username;
 
     @Column(name="password")
