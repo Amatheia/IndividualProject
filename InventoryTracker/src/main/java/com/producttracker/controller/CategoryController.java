@@ -11,6 +11,7 @@ import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -55,6 +56,8 @@ public class CategoryController extends HttpServlet {
 
         String forward = "";
         String action = request.getParameter("action");
+
+        HttpSession session = request.getSession(true);
 
         if (action.equalsIgnoreCase("delete")){
             int categoryid = Integer.parseInt(request.getParameter("categoryId"));

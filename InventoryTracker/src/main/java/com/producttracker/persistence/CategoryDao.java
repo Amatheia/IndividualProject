@@ -23,7 +23,6 @@ import java.util.List;
 public class CategoryDao extends Dao {
 
     private final Logger log = Logger.getLogger(this.getClass());
-    private Dao genDao = new Dao();
     private int id = 0;
 
     /**
@@ -86,9 +85,9 @@ public class CategoryDao extends Dao {
      * @param category
      */
     public void updateCategory(Category category) {
-        genDao.session.beginTransaction();
-        genDao.session.update(category);
-        genDao.session.getTransaction().commit();
+        session.beginTransaction();
+        session.merge(category);
+        session.getTransaction().commit();
         log.info("Updated: " + category);
     }
 }

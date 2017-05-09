@@ -27,7 +27,7 @@ public class Vendor {
     @Column(name="vendor_id")
     private int vendorId;
 
-    @Column(name = "vendor_name", unique = true)
+    @Column(name = "vendor_name")
     private String vendorName;
 
     @Column(name="contact_name")
@@ -58,7 +58,7 @@ public class Vendor {
      * Instantiates a new Vendor.
      *
      * @param vendorId  the vendor id
-     * @param vendorName   the vendor name
+     * @param vendorName    the vendor name
      * @param contactName    the contact name
      * @param address    the address
      * @param city    the city

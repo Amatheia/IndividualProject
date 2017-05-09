@@ -23,7 +23,6 @@ import java.util.List;
 public class VendorDao extends Dao {
 
     private final Logger log = Logger.getLogger(this.getClass());
-    private Dao genDao = new Dao();
     private int id = 0;
 
     /**
@@ -89,9 +88,9 @@ public class VendorDao extends Dao {
      * @param vendor
      */
     public void updateVendor(Vendor vendor) {
-        genDao.session.beginTransaction();
-        genDao.session.update(vendor);
-        genDao.session.getTransaction().commit();
+        session.beginTransaction();
+        session.merge(vendor);
+        session.getTransaction().commit();
         log.info("Updated: " + vendor);
     }
 }

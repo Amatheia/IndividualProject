@@ -23,7 +23,6 @@ import java.util.List;
 public class UserDao extends Dao {
 
     private final Logger log = Logger.getLogger(this.getClass());
-    private Dao genDao = new Dao();
     private int id = 0;
 
     /**
@@ -87,9 +86,9 @@ public class UserDao extends Dao {
      * @param user
      */
     public void updateUser(User user) {
-        genDao.session.beginTransaction();
-        genDao.session.update(user);
-        genDao.session.getTransaction().commit();
+        session.beginTransaction();
+        session.merge(user);
+        session.getTransaction().commit();
         log.info("Updated: " + user);
     }
 
