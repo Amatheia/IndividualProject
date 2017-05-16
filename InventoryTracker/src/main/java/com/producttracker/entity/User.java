@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 
 /**
+ * A class to represent a user.
+ *
  * The Food Inventory Tracker program outputs an inventory management web application
  * for internal use by a restaurant. It implements a food expiration web service to get
  * a food expiration duration. User roles are in place. Registered users are able to add tasks,
@@ -14,8 +16,6 @@ import javax.persistence.Entity;
  * Only admin are allowed to completely update a product; add/delete products, categories,
  * and vendors. Only admin may view/update/delete the users list. A registered user may request
  * admin privileges by filling out the contact form.
- *
- * A class to represent a user.
  *
  * @author amatheia
  * @version 1.0

@@ -14,6 +14,9 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
+ * JsonOutput provides json output of categories and products for ajax call of dropdown options
+ * in the update inventory form.
+ *
  * The Food Inventory Tracker program outputs an inventory management web application
  * for internal use by a restaurant. It implements a food expiration web service to get
  * a food expiration duration. User roles are in place. Registered users are able to add tasks,
@@ -21,9 +24,6 @@ import java.util.List;
  * Only admin are allowed to completely update a product; add/delete products, categories,
  * and vendors. Only admin may view/update/delete the users list. A registered user may request
  * admin privileges by filling out the contact form.
- *
- * JsonOutput provides json output of categories and products for ajax call of dropdown options
- * in the update inventory form.
  *
  * @author amatheia
  * @version 1.0
